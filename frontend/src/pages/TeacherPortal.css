@@ -1,0 +1,1613 @@
+/* ==================== TEACHER PORTAL CONTAINER ==================== */
+.teacher-portal-container {
+    display: flex;
+    min-height: 100vh;
+    background: #081120;
+}
+
+/* ==================== MAIN CONTENT ==================== */
+.teacher-portal-content {
+    flex: 1;
+    padding: 30px 35px;
+    overflow-y: auto;
+}
+
+/* ==================== PAGE TITLE ==================== */
+.page-title {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* ==================== WELCOME SECTION - ENHANCED ==================== */
+.welcome-section.enhanced {
+    background: linear-gradient(135deg, #1c2541, #0b132b);
+    padding: 25px 30px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-section.enhanced::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(244, 162, 97, 0.06), transparent 70%);
+    border-radius: 50%;
+}
+
+.welcome-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.welcome-left h1 {
+    color: white;
+    font-size: 28px;
+    margin: 0;
+}
+
+.welcome-text {
+    color: #94a3b8;
+    margin: 5px 0 0 0;
+    font-size: 14px;
+}
+
+.welcome-right .welcome-date {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #94a3b8;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 16px;
+    border-radius: 10px;
+}
+
+.welcome-date .date-icon {
+    color: #f4a261;
+    font-size: 16px;
+}
+
+/* Welcome Stats */
+.welcome-stats {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.welcome-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #94a3b8;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px 16px;
+    border-radius: 20px;
+}
+
+.welcome-stat-item .stat-icon {
+    color: #f4a261;
+    font-size: 16px;
+}
+
+.welcome-stat-item.class-badge {
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+}
+
+/* ==================== MESSAGES ==================== */
+.message {
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.message.success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.message.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.message.info {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+/* ==================== SUMMARY GRID - ENHANCED ==================== */
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.summary-card {
+    background: #1c2541;
+    padding: 20px 25px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.summary-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(244, 162, 97, 0.15);
+}
+
+.summary-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.summary-icon-wrapper.students {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+}
+
+.summary-icon-wrapper.subjects {
+    background: rgba(139, 92, 246, 0.15);
+    color: #a78bfa;
+}
+
+.summary-icon-wrapper.present {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+}
+
+.summary-icon-wrapper.attendance {
+    background: rgba(244, 162, 97, 0.15);
+    color: #f4a261;
+}
+
+.summary-icon-wrapper.tasks {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+}
+
+.summary-icon-wrapper.announcements {
+    background: rgba(236, 72, 153, 0.15);
+    color: #f472b6;
+}
+
+.summary-icon-wrapper .summary-icon {
+    font-size: 20px;
+}
+
+.summary-card h3 {
+    margin: 0;
+    font-size: 24px;
+    color: white;
+}
+
+.summary-card p {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+/* ==================== CARDS - ENHANCED ==================== */
+.card.enhanced-card {
+    background: #1c2541;
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: all 0.3s ease;
+}
+
+.card.enhanced-card:hover {
+    border-color: rgba(244, 162, 97, 0.08);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 18px;
+    color: white;
+}
+
+.card-badge {
+    background: rgba(255, 255, 255, 0.06);
+    color: #94a3b8;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.card h3 {
+    color: white;
+    margin: 0 0 15px 0;
+    font-size: 16px;
+}
+
+/* ==================== SUBJECTS GRID - ENHANCED ==================== */
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.subject-card.enhanced {
+    background: #0b132b;
+    padding: 16px 18px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.subject-card.enhanced:hover {
+    transform: translateY(-3px);
+    border-color: #f4a261;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.subject-icon {
+    font-size: 28px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.subject-info {
+    flex: 1;
+}
+
+.subject-info h4 {
+    margin: 0;
+    font-size: 15px;
+    color: white;
+    font-weight: 600;
+}
+
+.subject-info p {
+    margin: 3px 0 0 0;
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.subject-grade {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 4px;
+    background: #3B82F6;
+    color: white;
+}
+
+.student-count {
+    margin-top: 4px !important;
+    font-size: 12px;
+    color: #6a7a95 !important;
+}
+
+/* ==================== NO DATA ==================== */
+.no-data {
+    color: #6a7a95;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.no-data-sub {
+    color: #6a7a95;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* ==================== LOADING & ERROR ==================== */
+.loading-state,
+.error-state {
+    text-align: center;
+    color: #94a3b8;
+    padding: 40px;
+}
+
+.error-state {
+    color: #dc2626;
+}
+
+/* ==================== QUICK ACTIONS ROW ==================== */
+.quick-actions-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.quick-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 14px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.quick-action-btn:hover {
+    background: #f4a261;
+    color: #0b132b;
+    transform: translateY(-3px);
+    border-color: #f4a261;
+    box-shadow: 0 8px 25px rgba(244, 162, 97, 0.2);
+}
+
+.quick-action-btn:active {
+    transform: scale(0.98);
+}
+
+/* ==================== TEACHER TWO COLUMN ==================== */
+.teacher-dashboard-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.col-left,
+.col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* ==================== FILTER SECTION ==================== */
+.filter-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+    background: #1c2541;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-group label {
+    color: #94a3b8;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+
+.filter-select,
+.filter-input {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: none;
+    background: #0b132b;
+    color: white;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.filter-select:focus,
+.filter-input:focus {
+    outline: 2px solid #f4a261;
+}
+
+/* ==================== STATS BAR ==================== */
+.stats-bar {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: #1c2541;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.stat-item strong {
+    color: white;
+}
+
+.stat-item .complete-count {
+    color: #22C55E;
+}
+
+.stat-item .incomplete-count {
+    color: #F59E0B;
+}
+
+/* ==================== TABLE CARD ==================== */
+.table-card {
+    background: #1c2541;
+    padding: 20px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 10px;
+}
+
+.table-responsive .teacher-table {
+    min-width: 600px;
+}
+
+/* ==================== TEACHER TABLE ==================== */
+.teacher-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.teacher-table th {
+    background: #0b132b;
+    color: #f4a261;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.teacher-table td {
+    color: white;
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.teacher-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* ==================== SCORE & GRADE BADGES ==================== */
+.score-badge {
+    background: #0b132b;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #f4a261;
+    display: inline-block;
+}
+
+.grade-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    display: inline-block;
+    min-width: 40px;
+    text-align: center;
+    color: white;
+}
+
+/* ==================== ASSESSMENT TAGS ==================== */
+.assessment-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.assessment-tag {
+    background: #0b132b;
+    color: #94a3b8;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    white-space: nowrap;
+}
+
+.assessment-tag.more-tag {
+    background: #f4a261;
+    color: #0b132b;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.assessment-tag.more-tag:hover {
+    background: #e08f4d;
+}
+
+.no-assessment-tag {
+    color: #6a7a95;
+    font-size: 11px;
+    font-style: italic;
+}
+
+/* ==================== EXPANDED ASSESSMENTS ==================== */
+.expanded-assessments {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==================== STATUS BADGE - COMPLETE/INCOMPLETE ==================== */
+.status-badge.complete {
+    background: rgba(34, 197, 94, 0.15) !important;
+    color: #22C55E !important;
+}
+
+.status-badge.incomplete {
+    background: rgba(245, 158, 11, 0.15) !important;
+    color: #F59E0B !important;
+}
+
+/* ==================== BUTTONS ==================== */
+.btn-edit {
+    background: #f4a261;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #0b132b;
+    font-weight: 500;
+    margin-right: 5px;
+    transition: background 0.3s;
+}
+
+.btn-edit:hover {
+    background: #e08f4d;
+}
+
+.btn-delete {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-delete:hover {
+    background: #b91c1c;
+}
+
+.btn-save-small {
+    background: #22C55E;
+    color: white;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-save-small:hover {
+    background: #16a34a;
+}
+
+.btn-feedback {
+    background: #8B5CF6;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-feedback:hover {
+    background: #7C3AED;
+}
+
+/* ==================== ATTENDANCE HEADER ==================== */
+.attendance-header-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    background: #1c2541;
+    padding: 20px 25px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+.attendance-class-info h2 {
+    color: white;
+    margin: 0;
+    font-size: 20px;
+}
+
+.attendance-class-info .student-count {
+    color: #94a3b8;
+    margin: 5px 0 0 0;
+    font-size: 14px;
+}
+
+.attendance-date-picker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.attendance-date-picker label {
+    color: #94a3b8;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.date-input {
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: none;
+    background: #0b132b;
+    color: white;
+    font-size: 14px;
+}
+
+.date-input:focus {
+    outline: 2px solid #f4a261;
+}
+
+/* ==================== ATTENDANCE LEGEND ==================== */
+.attendance-legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    padding: 10px 0;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.legend-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.legend-dot.present {
+    background: #22C55E;
+}
+
+.legend-dot.absent {
+    background: #DC2626;
+}
+
+.legend-dot.late {
+    background: #F59E0B;
+}
+
+.legend-dot.excused {
+    background: #8B5CF6;
+}
+
+/* ==================== STATUS BUTTONS ==================== */
+.status-buttons {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.status-btn {
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 2px solid #2a3555;
+    background: transparent;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.status-btn:hover {
+    transform: scale(1.05);
+}
+
+.status-btn.active {
+    color: white;
+}
+
+.status-btn.present.active {
+    background: #22C55E;
+    border-color: #22C55E;
+}
+
+.status-btn.absent.active {
+    background: #DC2626;
+    border-color: #DC2626;
+}
+
+.status-btn.late.active {
+    background: #F59E0B;
+    border-color: #F59E0B;
+}
+
+.status-btn.excused.active {
+    background: #8B5CF6;
+    border-color: #8B5CF6;
+}
+
+/* ==================== ATTENDANCE TABLE ==================== */
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.attendance-table th {
+    background: #0b132b;
+    color: #f4a261;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.attendance-table td {
+    color: white;
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.attendance-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* ==================== STATUS BADGES ==================== */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-badge.present {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge.absent {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.status-badge.late {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-badge.excused {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+/* ==================== SAVED RECORDS ==================== */
+.saved-records {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.saved-records h3 {
+    color: white;
+    margin: 0 0 15px 0;
+    font-size: 18px;
+}
+
+/* ==================== ATTENDANCE ACTIONS ==================== */
+.attendance-actions {
+    margin-top: 20px;
+}
+
+/* ==================== TASKS LIST - ENHANCED ==================== */
+.tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-item.enhanced {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #0b132b;
+    border-radius: 10px;
+    border-left: 4px solid #6a7a95;
+    transition: all 0.3s ease;
+}
+
+.task-item.enhanced:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.task-item.high {
+    border-left-color: #DC2626;
+}
+
+.task-item.medium {
+    border-left-color: #F59E0B;
+}
+
+.task-item.low {
+    border-left-color: #22C55E;
+}
+
+.task-info h4 {
+    color: white;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.task-due {
+    color: #6a7a95;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 3px;
+}
+
+.task-priority {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 12px;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.task-priority.high {
+    background: rgba(220, 38, 38, 0.15);
+    color: #f87171;
+}
+
+.task-priority.medium {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+}
+
+.task-priority.low {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+}
+
+/* ==================== QUICK STATS GRID - ENHANCED ==================== */
+.quick-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.quick-stat-item.enhanced {
+    text-align: center;
+    padding: 18px;
+    background: #0b132b;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    transition: all 0.3s ease;
+}
+
+.quick-stat-item.enhanced:hover {
+    border-color: rgba(244, 162, 97, 0.15);
+}
+
+.quick-stat-item .stat-number {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: #f4a261;
+}
+
+.quick-stat-item .stat-label {
+    display: block;
+    color: #94a3b8;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* ==================== ACTIVITY TIMELINE - ENHANCED ==================== */
+.activity-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.activity-item.enhanced {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 10px 14px;
+    background: #0b132b;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.activity-item.enhanced:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.activity-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.activity-dot.grade {
+    background: #3B82F6;
+}
+
+.activity-dot.attendance {
+    background: #F59E0B;
+}
+
+.activity-dot.assessment {
+    background: #8B5CF6;
+}
+
+.activity-dot.student {
+    background: #22C55E;
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-title {
+    color: white;
+    margin: 0;
+    font-size: 14px;
+}
+
+.activity-time {
+    color: #6a7a95;
+    font-size: 12px;
+    display: block;
+    margin-top: 2px;
+}
+
+/* ==================== ANNOUNCEMENTS PREVIEW - ENHANCED ==================== */
+.announcements-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.announcement-preview-item.enhanced {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background: #0b132b;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.announcement-preview-item.enhanced:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.announcement-preview-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.announcement-bullet {
+    color: #f4a261;
+    font-size: 16px;
+}
+
+.announcement-preview-title h4 {
+    color: white;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.announcement-preview-date {
+    color: #6a7a95;
+    font-size: 12px;
+}
+
+/* ==================== FORCE PASSWORD MODAL ==================== */
+.force-password-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.force-password-modal {
+    background: #1c2541;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 420px;
+    width: 90%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.force-password-modal h2 {
+    color: white;
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+.force-password-modal p {
+    color: #94a3b8;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.force-password-modal .form-group {
+    margin-bottom: 15px;
+}
+
+.force-password-modal .form-group label {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.force-password-modal .form-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #0b132b;
+    color: white;
+    font-size: 15px;
+}
+
+.force-password-modal .form-group input:focus {
+    outline: 2px solid #f4a261;
+}
+
+.force-password-modal .change-password-btn {
+    width: 100%;
+    padding: 14px;
+    background: #f4a261;
+    color: #0b132b;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.force-password-modal .change-password-btn:hover {
+    background: #e08f4d;
+}
+
+.force-password-modal .password-message {
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.force-password-modal .password-message.success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.force-password-modal .password-message.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* ==================== FEEDBACK MODAL ==================== */
+.feedback-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.feedback-modal-content {
+    background: #1c2541;
+    border-radius: 20px;
+    max-width: 650px;
+    width: 100%;
+    max-height: 90vh;
+    overflow: auto;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.feedback-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: #0b132b;
+    border-radius: 20px 20px 0 0;
+}
+
+.feedback-modal-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 20px;
+}
+
+.feedback-modal-close {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.feedback-modal-close:hover {
+    color: white;
+}
+
+.feedback-modal-body {
+    padding: 24px;
+}
+
+.feedback-student-info {
+    background: #0b132b;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+
+.feedback-student-info p {
+    color: #94a3b8;
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+.feedback-student-info strong {
+    color: white;
+}
+
+.feedback-form-group {
+    margin-bottom: 16px;
+}
+
+.feedback-form-group label {
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.feedback-score-input {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    background: #0b132b;
+    color: white;
+    font-size: 15px;
+}
+
+.feedback-score-input:focus {
+    outline: 2px solid #f4a261;
+}
+
+.feedback-textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: none;
+    background: #0b132b;
+    color: white;
+    font-size: 15px;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 150px;
+    line-height: 1.6;
+}
+
+.feedback-textarea:focus {
+    outline: 2px solid #f4a261;
+}
+
+.feedback-textarea::placeholder {
+    color: #6a7a95;
+}
+
+.feedback-modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.feedback-save-btn {
+    flex: 1;
+    background: #8B5CF6;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.feedback-save-btn:hover {
+    background: #7C3AED;
+}
+
+.feedback-save-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.feedback-cancel-btn {
+    flex: 1;
+    background: #6a7a95;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.feedback-cancel-btn:hover {
+    background: #5a6a85;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+    .teacher-portal-content {
+        padding: 20px;
+    }
+
+    .teacher-dashboard-two-col {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .quick-stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .teacher-portal-content {
+        padding: 15px;
+    }
+
+    .welcome-top {
+        flex-direction: column;
+    }
+
+    .welcome-right .welcome-date {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .welcome-left h1 {
+        font-size: 22px;
+    }
+
+    .page-title {
+        font-size: 24px;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .subjects-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .quick-actions-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .quick-action-btn {
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .teacher-dashboard-two-col {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .welcome-stats {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .welcome-stat-item {
+        width: fit-content;
+    }
+
+    .filter-section {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .stats-bar {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .teacher-table {
+        font-size: 12px;
+    }
+
+    .teacher-table th,
+    .teacher-table td {
+        padding: 8px 10px;
+    }
+
+    .attendance-header-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .attendance-date-picker {
+        flex-wrap: wrap;
+    }
+
+    .attendance-table {
+        font-size: 12px;
+    }
+
+    .attendance-table th,
+    .attendance-table td {
+        padding: 8px 10px;
+    }
+
+    .status-btn {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+
+    .task-item.enhanced {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .task-priority {
+        align-self: flex-start;
+    }
+
+    .quick-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .announcement-preview-item.enhanced {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .card-badge {
+        font-size: 11px;
+    }
+
+    .force-password-modal {
+        padding: 25px;
+        max-width: 95%;
+    }
+
+    .assessment-tags {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .assessment-tag {
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+
+    .expanded-assessments {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .feedback-modal-content {
+        max-width: 95%;
+    }
+
+    .feedback-modal-body {
+        padding: 16px;
+    }
+
+    .feedback-textarea {
+        min-height: 120px;
+        font-size: 14px;
+    }
+
+    .feedback-modal-actions {
+        flex-direction: column;
+    }
+
+    .feedback-save-btn,
+    .feedback-cancel-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .teacher-portal-content {
+        padding: 10px;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .subjects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-actions-row {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .welcome-left h1 {
+        font-size: 18px;
+    }
+
+    .summary-card {
+        padding: 15px 18px;
+    }
+
+    .summary-card h3 {
+        font-size: 20px;
+    }
+
+    .summary-icon-wrapper {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .page-title {
+        font-size: 20px;
+    }
+
+    .teacher-table {
+        font-size: 11px;
+    }
+
+    .teacher-table th,
+    .teacher-table td {
+        padding: 6px 8px;
+    }
+
+    .grade-badge {
+        font-size: 11px;
+        padding: 2px 8px;
+        min-width: 30px;
+    }
+
+    .score-badge {
+        font-size: 11px;
+        padding: 2px 8px;
+    }
+
+    .attendance-table {
+        font-size: 11px;
+    }
+
+    .attendance-table th,
+    .attendance-table td {
+        padding: 6px 8px;
+    }
+
+    .status-btn {
+        font-size: 9px;
+        padding: 2px 6px;
+    }
+
+    .force-password-modal {
+        padding: 20px;
+    }
+
+    .force-password-modal h2 {
+        font-size: 18px;
+    }
+}

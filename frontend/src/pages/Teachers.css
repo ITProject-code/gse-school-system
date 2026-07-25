@@ -1,0 +1,134 @@
+.teachers-container {
+  display: flex;
+  min-height: 100vh;
+  background: #081120;
+}
+
+.teachers-content {
+  flex: 1;
+  padding: 30px;
+}
+
+.page-title {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.summary-card {
+  background: #1c2541;
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.summary-card h2 {
+  margin: 0;
+  color: #f4a261;
+}
+
+.teacher-form {
+  background: #1c2541;
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+}
+
+.teacher-form h2 {
+  color: white;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.form-grid input {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #0b132b;
+  color: white;
+}
+
+.form-grid input::placeholder {
+  color: #6a7a95;
+}
+
+.form-grid input:focus {
+  outline: 2px solid #f4a261;
+}
+
+.save-btn {
+  margin-top: 20px;
+  background: #f4a261;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #0b132b;
+  transition: background 0.3s;
+}
+
+.save-btn:hover {
+  background: #e08f4d;
+}
+
+.table-card {
+  background: #1c2541;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.table-card h2 {
+  color: white;
+}
+
+.search-box {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 20px;
+  background: #0b132b;
+  color: white;
+}
+
+.search-box::placeholder {
+  color: #6a7a95;
+}
+
+.search-box:focus {
+  outline: 2px solid #f4a261;
+}
+
+.teachers-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.teachers-table th {
+  background: #0b132b;
+  color: #f4a261;
+  padding: 14px;
+  text-align: left;
+}
+
+.teachers-table td {
+  color: white;
+  padding: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.teachers-table tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+.form-note {
+  color: #94a3b8;
+  font-size: 14px;
+  font-style: italic;
+  margin-bottom: 15px;
+}

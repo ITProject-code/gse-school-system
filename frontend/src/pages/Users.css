@@ -1,0 +1,570 @@
+/* ==================== USERS PAGE ==================== */
+
+.users-page-container {
+    display: flex;
+    min-height: 100vh;
+    background: #081120;
+}
+
+.users-page-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.users-page-content .page-title {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+/* Message */
+.users-page-content .message {
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.users-page-content .message.success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.users-page-content .message.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Stats Cards */
+.users-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.user-stat-card {
+    background: #1c2541;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.user-stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.user-stat-card .user-stat-value {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+}
+
+.user-stat-card .user-stat-label {
+    display: block;
+    color: #94a3b8;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.user-stat-card.total .user-stat-value {
+    color: #f4a261;
+}
+
+.user-stat-card.admin .user-stat-value {
+    color: #dc2626;
+}
+
+.user-stat-card.teacher .user-stat-value {
+    color: #3b82f6;
+}
+
+.user-stat-card.student .user-stat-value {
+    color: #22c55e;
+}
+
+/* Controls */
+.users-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.user-filter-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-filter-section label {
+    color: #94a3b8;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.user-filter-select {
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: none;
+    background: #0b132b;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    min-width: 200px;
+}
+
+.user-filter-select:focus {
+    outline: 2px solid #f4a261;
+}
+
+.user-filter-select option {
+    background: #1c2541;
+    color: white;
+}
+
+.btn-add {
+    background: #22c55e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+    white-space: nowrap;
+}
+
+.btn-add:hover {
+    background: #16a34a;
+}
+
+/* User Form Container */
+.user-form-container {
+    background: #1c2541;
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+}
+
+.user-form-container h3 {
+    color: white;
+    margin: 0 0 20px 0;
+}
+
+.user-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.user-form-grid .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-form-grid .form-group label {
+    color: #94a3b8;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+
+.user-form-grid .form-group input,
+.user-form-grid .form-group select {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: none;
+    background: #0b132b;
+    color: white;
+    font-size: 14px;
+}
+
+.user-form-grid .form-group input:focus,
+.user-form-grid .form-group select:focus {
+    outline: 2px solid #f4a261;
+}
+
+.user-form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.user-form-actions .save-btn {
+    background: #f4a261;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #0b132b;
+    transition: background 0.3s;
+    margin-top: 0;
+}
+
+.user-form-actions .save-btn:hover {
+    background: #e08f4d;
+}
+
+.user-form-actions .cancel-btn {
+    background: #6a7a95;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: background 0.3s;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.user-form-actions .cancel-btn:hover {
+    background: #5a6a85;
+}
+
+/* Users Table */
+.users-table-container {
+    background: #1c2541;
+    padding: 20px;
+    border-radius: 16px;
+    overflow-x: auto;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.users-table thead th {
+    background: #0b132b;
+    color: #f4a261;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.users-table tbody td {
+    color: white;
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.users-table tbody tr:hover td {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.users-table .no-data {
+    text-align: center;
+    padding: 30px;
+    color: #6a7a95;
+}
+
+/* Role Badges */
+.role-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.role-badge.admin {
+    background: #dc2626;
+    color: white;
+}
+
+.role-badge.teacher {
+    background: #3b82f6;
+    color: white;
+}
+
+.role-badge.student {
+    background: #22c55e;
+    color: white;
+}
+
+.role-badge.staff {
+    background: #f59e0b;
+    color: white;
+}
+
+/* Status Badge */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-badge.active {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge.inactive {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* User Actions */
+.user-actions {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.user-actions button {
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.2s;
+}
+
+.user-actions button:hover {
+    transform: scale(1.1);
+}
+
+.user-actions .btn-edit {
+    background: #f4a261;
+    color: #0b132b;
+}
+
+.user-actions .btn-reset-password {
+    background: #8b5cf6;
+    color: white;
+}
+
+.user-actions .btn-delete {
+    background: #dc2626;
+    color: white;
+}
+
+.user-actions .btn-delete:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Loading State */
+.loading-state {
+    text-align: center;
+    color: #94a3b8;
+    padding: 40px;
+}
+
+/* ==================== MODAL ==================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-content {
+    background: #1c2541;
+    padding: 35px 40px;
+    border-radius: 20px;
+    max-width: 450px;
+    width: 90%;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
+}
+
+.modal-content h3 {
+    color: white;
+    margin: 0 0 5px 0;
+    font-size: 22px;
+}
+
+.modal-subtitle {
+    color: #94a3b8;
+    font-size: 14px;
+    margin: 5px 0 20px 0;
+}
+
+.modal-subtitle strong {
+    color: #f4a261;
+}
+
+.modal-content .form-group {
+    margin-bottom: 15px;
+}
+
+.modal-content .form-group label {
+    color: #94a3b8;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.modal-content .form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: none;
+    background: #0b132b;
+    color: white;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.modal-content .form-group input:focus {
+    outline: 2px solid #f4a261;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.modal-actions .save-btn {
+    margin-top: 0;
+    flex: 1;
+}
+
+.modal-actions .cancel-btn {
+    margin-top: 0;
+    margin-left: 0;
+    flex: 1;
+    text-align: center;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+    .users-page-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .users-page-content {
+        padding: 15px;
+    }
+
+    .users-page-content .page-title {
+        font-size: 22px;
+    }
+
+    .users-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .users-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .user-filter-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .user-filter-select {
+        width: 100%;
+    }
+
+    .btn-add {
+        text-align: center;
+    }
+
+    .user-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .user-form-actions {
+        flex-direction: column;
+    }
+
+    .users-table {
+        min-width: 600px;
+        font-size: 13px;
+    }
+
+    .users-table thead th,
+    .users-table tbody td {
+        padding: 8px 10px;
+    }
+
+    .modal-content {
+        padding: 25px 20px;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .users-page-content {
+        padding: 10px;
+    }
+
+    .users-page-content .page-title {
+        font-size: 18px;
+    }
+
+    .users-stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .user-stat-card {
+        padding: 15px;
+    }
+
+    .user-stat-card .user-stat-value {
+        font-size: 24px;
+    }
+
+    .users-table {
+        min-width: 500px;
+        font-size: 12px;
+    }
+
+    .users-table thead th,
+    .users-table tbody td {
+        padding: 6px 8px;
+    }
+
+    .modal-content {
+        padding: 20px 15px;
+    }
+
+    .modal-content h3 {
+        font-size: 18px;
+    }
+}

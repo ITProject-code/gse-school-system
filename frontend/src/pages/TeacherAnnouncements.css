@@ -1,0 +1,214 @@
+.teacher-announcements-container {
+    display: flex;
+    min-height: 100vh;
+    background: #081120;
+}
+
+.teacher-announcements-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.teacher-announcements-content .page-header {
+    margin-bottom: 30px;
+}
+
+.teacher-announcements-content .page-header h1 {
+    color: white;
+    font-size: 28px;
+    margin: 0 0 5px 0;
+}
+
+.teacher-announcements-content .page-header p {
+    color: #94a3b8;
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Messages */
+.teacher-announcements-content .message {
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.teacher-announcements-content .message.success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.teacher-announcements-content .message.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Loading State */
+.loading-state {
+    text-align: center;
+    color: #94a3b8;
+    padding: 60px 20px;
+    font-size: 16px;
+}
+
+/* No Announcements */
+.no-announcements {
+    text-align: center;
+    padding: 80px 20px;
+    background: #1c2541;
+    border-radius: 20px;
+}
+
+.no-announcements-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.no-announcements h3 {
+    color: white;
+    font-size: 24px;
+    margin: 0 0 10px 0;
+}
+
+.no-announcements p {
+    color: #94a3b8;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Announcements Grid */
+.announcements-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.announcement-card {
+    background: #1c2541;
+    padding: 25px;
+    border-radius: 16px;
+    border-left: 4px solid #f4a261;
+    transition: transform 0.3s;
+}
+
+.announcement-card:hover {
+    transform: translateX(5px);
+}
+
+.announcement-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.announcement-card-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 18px;
+}
+
+.audience-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.audience-badge.all {
+    background: #8b5cf6;
+    color: white;
+}
+
+.audience-badge.students {
+    background: #22c55e;
+    color: white;
+}
+
+.audience-badge.teachers {
+    background: #3b82f6;
+    color: white;
+}
+
+.announcement-card-body {
+    color: #c0cfe0;
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+    font-size: 14px;
+}
+
+.announcement-card-footer {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.announcement-card-footer span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.teacher-ref {
+    background: #0b132b;
+    padding: 2px 10px;
+    border-radius: 12px;
+    color: #94a3b8;
+}
+
+.grade-ref {
+    background: #0b132b;
+    padding: 2px 10px;
+    border-radius: 12px;
+    color: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .teacher-announcements-content {
+        padding: 15px;
+    }
+
+    .teacher-announcements-content .page-header h1 {
+        font-size: 22px;
+    }
+
+    .announcement-card {
+        padding: 18px;
+    }
+
+    .announcement-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .announcement-card-footer {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .teacher-announcements-content {
+        padding: 10px;
+    }
+
+    .no-announcements {
+        padding: 40px 15px;
+    }
+
+    .no-announcements-icon {
+        font-size: 48px;
+    }
+
+    .no-announcements h3 {
+        font-size: 20px;
+    }
+}

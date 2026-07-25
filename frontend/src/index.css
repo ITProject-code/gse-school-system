@@ -1,0 +1,1235 @@
+/* ============================================================
+   GSEMS GLOBAL DESIGN SYSTEM
+   German School of Excellence Management System
+=========================================================== */
+
+/* ===== RESET ===== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== ROOT COLORS ===== */
+
+:root {
+
+    --bg-main: #081120;
+    --bg-sidebar: #0b132b;
+    --bg-card: #1c2541;
+    --bg-input: #101937;
+
+    --primary: #f4a261;
+    --primary-hover: #e08f4d;
+
+    --border: #2d3d63;
+
+    --text: #ffffff;
+    --text-secondary: #c0cfe0;
+    --text-muted: #8fa0c0;
+
+    --success: #22c55e;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+
+    --radius: 14px;
+
+    --shadow:
+        0 8px 24px rgba(0,0,0,.25);
+
+    --transition: .25s ease;
+}
+
+/* ===== HTML ===== */
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* ===== BODY ===== */
+
+body{
+    font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+
+    background:var(--bg-main);
+
+    color:var(--text-secondary);
+
+    min-height:100vh;
+
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+/* ===== ROOT ===== */
+
+#root{
+    width:100%;
+    min-height:100vh;
+}
+
+/* ===== APP CONTAINER ===== */
+
+.app-container{
+
+    max-width:1400px;
+
+    width:100%;
+
+    margin:auto;
+
+    padding:20px;
+}
+
+/* ===== HOME PAGE ===== */
+
+.homepage{
+
+    max-width:100%!important;
+
+    width:100%!important;
+
+    padding:0!important;
+
+    margin:0!important;
+}
+
+/* ===== TYPOGRAPHY ===== */
+
+h1,h2,h3,h4,h5,h6{
+
+    color:white;
+
+    font-weight:700;
+
+    line-height:1.3;
+}
+
+p{
+
+    color:var(--text-secondary);
+
+    line-height:1.6;
+}
+
+/* ===== LINKS ===== */
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+    transition:var(--transition);
+}
+
+/* ===== BUTTONS ===== */
+
+button{
+
+    font-family:inherit;
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    transition:all .25s ease;
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+}
+
+button:active{
+
+    transform:scale(.98);
+}
+
+button:disabled{
+
+    opacity:.65;
+
+    cursor:not-allowed;
+
+    transform:none;
+}
+
+/* ===== INPUTS ===== */
+
+input,
+select,
+textarea{
+
+    width:100%;
+
+    background:var(--bg-input);
+
+    color:white;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    padding:12px 14px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:all .25s ease;
+}
+
+input::placeholder,
+textarea::placeholder{
+
+    color:#7d8eaf;
+}
+
+input:hover,
+select:hover,
+textarea:hover{
+
+    border-color:#4d5e86;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    background:var(--bg-input);
+
+    color:white;
+
+    border-color:var(--primary);
+
+    box-shadow:
+    0 0 0 4px rgba(244,162,97,.15);
+}
+
+/* ===== DATE INPUT SPECIFIC STYLES ===== */
+input[type="date"],
+input[type="datetime-local"],
+input[type="time"] {
+    color-scheme: dark;
+    position: relative;
+}
+
+/* Date picker icon color */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.8) sepia(1) saturate(3) hue-rotate(350deg);
+    cursor: pointer;
+    padding: 4px;
+    opacity: 0.8;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover,
+input[type="time"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Date input hover */
+input[type="date"]:hover,
+input[type="datetime-local"]:hover,
+input[type="time"]:hover {
+    border-color: var(--primary);
+}
+
+/* Date input focus */
+input[type="date"]:focus,
+input[type="datetime-local"]:focus,
+input[type="time"]:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(244, 162, 97, 0.15);
+}
+
+/* ===== DATE PICKER POPUP (Webkit/Chrome) ===== */
+::-webkit-datetime-edit {
+    color: white;
+    padding: 0 4px;
+}
+
+::-webkit-datetime-edit-fields-wrapper {
+    color: white;
+}
+
+::-webkit-datetime-edit-text {
+    color: var(--text-muted);
+    padding: 0 2px;
+}
+
+::-webkit-datetime-edit-month-field {
+    color: white;
+}
+
+::-webkit-datetime-edit-day-field {
+    color: white;
+}
+
+::-webkit-datetime-edit-year-field {
+    color: white;
+}
+
+::-webkit-inner-spin-button {
+    display: none;
+}
+
+/* ===== CALENDAR PICKER POPUP (Webkit/Chrome) ===== */
+::-webkit-calendar-picker-indicator {
+    filter: invert(0.8) sepia(1) saturate(3) hue-rotate(350deg);
+    cursor: pointer;
+}
+
+/* ===== DATE PICKER IN MODAL ===== */
+.modal-content input[type="date"],
+.modal-content input[type="datetime-local"],
+.modal-content input[type="time"] {
+    background: var(--bg-input);
+    color: white;
+    border-color: var(--border);
+}
+
+.modal-content input[type="date"]:focus,
+.modal-content input[type="datetime-local"]:focus,
+.modal-content input[type="time"]:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(244, 162, 97, 0.15);
+}
+
+/* ===== DATE PICKER IN SIDEBAR FORMS ===== */
+.sidebar-form input[type="date"],
+.sidebar-form input[type="datetime-local"],
+.sidebar-form input[type="time"] {
+    background: var(--bg-input);
+    color: white;
+    border-color: var(--border);
+}
+
+/* ===== AUTOFILL FIX ===== */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill{
+
+    -webkit-box-shadow:
+    0 0 0 1000px var(--bg-input) inset !important;
+
+    -webkit-text-fill-color:white!important;
+
+    caret-color:white;
+}
+
+/* ===== TEXT SELECTION ===== */
+
+::selection{
+
+    background:var(--primary);
+
+    color:white;
+}
+
+/* ===== TABLE ===== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+th{
+
+    color:var(--primary);
+
+    font-weight:700;
+}
+
+td{
+
+    color:white;
+}
+
+/* ===== CARDS ===== */
+
+.card{
+
+    background:var(--bg-card);
+
+    border-radius:18px;
+
+    padding:22px;
+
+    box-shadow:var(--shadow);
+}
+
+/* ===== IMAGES ===== */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+}
+
+/* ===== SCROLLBAR ===== */
+
+::-webkit-scrollbar{
+
+    width:9px;
+
+    height:9px;
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--bg-sidebar);
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary-hover);
+}
+
+/* Firefox */
+
+*{
+
+    scrollbar-width:thin;
+
+    scrollbar-color:var(--primary) var(--bg-sidebar);
+}
+
+/* ===== HORIZONTAL RULE ===== */
+
+hr{
+
+    border:none;
+
+    height:1px;
+
+    background:#2d3d63;
+}
+
+/* ===== FOCUS ACCESSIBILITY ===== */
+
+button:focus-visible,
+a:focus-visible{
+
+    outline:2px solid var(--primary);
+
+    outline-offset:3px;
+}
+
+/* ===== TRANSITIONS ===== */
+
+div,
+section,
+article,
+aside,
+nav{
+
+    transition:background .25s ease;
+}
+
+/* ===========================================================
+   DATE PICKER OVERRIDES FOR DARK THEME
+   =========================================================== */
+
+/* ===== NATIVE DATE PICKER (Chrome/Edge) ===== */
+input[type="date"]::-webkit-datetime-edit {
+    color: white;
+}
+
+input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+    color: white;
+}
+
+input[type="date"]::-webkit-datetime-edit-text {
+    color: var(--text-muted);
+}
+
+input[type="date"]::-webkit-datetime-edit-month-field {
+    color: white;
+}
+
+input[type="date"]::-webkit-datetime-edit-day-field {
+    color: white;
+}
+
+input[type="date"]::-webkit-datetime-edit-year-field {
+    color: white;
+}
+
+/* ===== DATE PICKER CALENDAR POPUP ===== */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.7) sepia(1) saturate(3) hue-rotate(350deg);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
+    filter: invert(1) sepia(1) saturate(3) hue-rotate(350deg);
+    background: rgba(244, 162, 97, 0.15);
+}
+
+/* ===== DATE PICKER DROPDOWN (For browsers that support it) ===== */
+input[type="date"]:focus::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]:focus::-webkit-calendar-picker-indicator {
+    filter: invert(1) sepia(1) saturate(3) hue-rotate(350deg);
+}
+
+/* ===== FOR FIREFOX ===== */
+input[type="date"] {
+    color-scheme: dark;
+}
+
+/* ===== FOR EDGE ===== */
+input[type="date"]::-webkit-datetime-edit-ampm-field {
+    color: white;
+}
+
+/* ===========================================================
+   REACT DATE PICKER (If using react-datepicker)
+   =========================================================== */
+
+.react-datepicker {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 12px !important;
+    box-shadow: var(--shadow) !important;
+    font-family: inherit !important;
+}
+
+.react-datepicker__header {
+    background-color: var(--bg-input) !important;
+    border-bottom: 1px solid var(--border) !important;
+    border-radius: 12px 12px 0 0 !important;
+}
+
+.react-datepicker__current-month {
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+.react-datepicker__day-name {
+    color: var(--text-muted) !important;
+}
+
+.react-datepicker__day {
+    color: var(--text-secondary) !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+}
+
+.react-datepicker__day:hover {
+    background: rgba(244, 162, 97, 0.15) !important;
+    color: white !important;
+}
+
+.react-datepicker__day--selected {
+    background: var(--primary) !important;
+    color: var(--bg-main) !important;
+    font-weight: 600 !important;
+}
+
+.react-datepicker__day--keyboard-selected {
+    background: rgba(244, 162, 97, 0.3) !important;
+    color: white !important;
+}
+
+.react-datepicker__day--today {
+    font-weight: 600 !important;
+    border: 1px solid var(--primary) !important;
+}
+
+.react-datepicker__day--outside-month {
+    color: var(--text-muted) !important;
+    opacity: 0.5 !important;
+}
+
+.react-datepicker__navigation {
+    top: 10px !important;
+}
+
+.react-datepicker__navigation-icon::before {
+    border-color: var(--primary) !important;
+}
+
+.react-datepicker__navigation:hover .react-datepicker__navigation-icon::before {
+    border-color: var(--primary-hover) !important;
+}
+
+.react-datepicker__time-container {
+    background-color: var(--bg-card) !important;
+    border-left: 1px solid var(--border) !important;
+}
+
+.react-datepicker__time-container .react-datepicker__time {
+    background-color: var(--bg-card) !important;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list {
+    background-color: var(--bg-card) !important;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item {
+    color: var(--text-secondary) !important;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item:hover {
+    background: rgba(244, 162, 97, 0.15) !important;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected {
+    background: var(--primary) !important;
+    color: var(--bg-main) !important;
+}
+
+.react-datepicker__triangle {
+    display: none !important;
+}
+
+/* ============================================================
+   EMOJI SUPPORT FOR SIDEBARS
+   ============================================================ */
+
+/* Ensure emojis display properly in both sidebars */
+.sidebar .menu-icon,
+.teacher-sidebar .menu-icon,
+.logout-btn .menu-icon,
+.teacher-logout-btn .menu-icon,
+.sidebar .logo h2,
+.teacher-sidebar .teacher-logo h2,
+.user-avatar,
+.teacher-avatar {
+    font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+    line-height: 1;
+    display: inline-block;
+}
+
+/* Emoji hover effects - scale up on hover */
+.sidebar .menu a:hover .menu-icon,
+.teacher-sidebar .teacher-menu a:hover .menu-icon {
+    transform: scale(1.15);
+    transition: transform 0.2s ease;
+}
+
+/* Emoji active state - subtle scale */
+.sidebar .menu a.active .menu-icon,
+.teacher-sidebar .teacher-menu a.active .menu-icon {
+    transform: scale(1.1);
+}
+
+/* Emoji size consistency */
+.sidebar .menu-icon,
+.teacher-sidebar .menu-icon {
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Emoji fallback for older browsers */
+@supports not (font-family: "Segoe UI Emoji") {
+    .sidebar .menu-icon,
+    .teacher-sidebar .menu-icon {
+        font-family: "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+    }
+}
+
+/* ===== RESPONSIVE EMOJI SIZES ===== */
+@media (max-width: 768px) {
+    .sidebar .menu-icon,
+    .teacher-sidebar .menu-icon {
+        font-size: 16px;
+        width: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar .menu-icon,
+    .teacher-sidebar .menu-icon {
+        font-size: 14px;
+        width: 18px;
+    }
+}
+
+/* ============================================================
+   SIDEBAR TOGGLE BUTTON (Mobile)
+   ============================================================ */
+
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 1001;
+    background: #0b132b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+    background: #1c2541;
+    border-color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .sidebar-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* ===== SIDEBAR OVERLAY (Mobile) ===== */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+}
+
+.sidebar-overlay.show {
+    display: block;
+}
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+
+/* Flex utilities */
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+/* Gap utilities */
+.gap-4 { gap: 4px; }
+.gap-8 { gap: 8px; }
+.gap-12 { gap: 12px; }
+.gap-16 { gap: 16px; }
+.gap-20 { gap: 20px; }
+.gap-24 { gap: 24px; }
+.gap-32 { gap: 32px; }
+
+/* Text utilities */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+.text-muted { color: var(--text-muted); }
+.text-primary { color: var(--primary); }
+.text-success { color: var(--success); }
+.text-danger { color: var(--danger); }
+.text-warning { color: var(--warning); }
+.text-white { color: white; }
+.text-uppercase { text-transform: uppercase; }
+.text-capitalize { text-transform: capitalize; }
+
+/* Font weight utilities */
+.font-light { font-weight: 300; }
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+
+/* Spacing utilities - Margin */
+.m-0 { margin: 0; }
+.m-4 { margin: 4px; }
+.m-8 { margin: 8px; }
+.m-12 { margin: 12px; }
+.m-16 { margin: 16px; }
+.m-20 { margin: 20px; }
+.m-24 { margin: 24px; }
+
+.mt-4 { margin-top: 4px; }
+.mt-8 { margin-top: 8px; }
+.mt-12 { margin-top: 12px; }
+.mt-16 { margin-top: 16px; }
+.mt-20 { margin-top: 20px; }
+.mt-24 { margin-top: 24px; }
+.mt-32 { margin-top: 32px; }
+
+.mb-4 { margin-bottom: 4px; }
+.mb-8 { margin-bottom: 8px; }
+.mb-12 { margin-bottom: 12px; }
+.mb-16 { margin-bottom: 16px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-24 { margin-bottom: 24px; }
+.mb-32 { margin-bottom: 32px; }
+
+.ml-4 { margin-left: 4px; }
+.ml-8 { margin-left: 8px; }
+.ml-12 { margin-left: 12px; }
+.ml-16 { margin-left: 16px; }
+
+.mr-4 { margin-right: 4px; }
+.mr-8 { margin-right: 8px; }
+.mr-12 { margin-right: 12px; }
+.mr-16 { margin-right: 16px; }
+
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+/* Spacing utilities - Padding */
+.p-0 { padding: 0; }
+.p-4 { padding: 4px; }
+.p-8 { padding: 8px; }
+.p-12 { padding: 12px; }
+.p-16 { padding: 16px; }
+.p-20 { padding: 20px; }
+.p-24 { padding: 24px; }
+.p-32 { padding: 32px; }
+
+.px-4 { padding-left: 4px; padding-right: 4px; }
+.px-8 { padding-left: 8px; padding-right: 8px; }
+.px-12 { padding-left: 12px; padding-right: 12px; }
+.px-16 { padding-left: 16px; padding-right: 16px; }
+.px-20 { padding-left: 20px; padding-right: 20px; }
+.px-24 { padding-left: 24px; padding-right: 24px; }
+
+.py-4 { padding-top: 4px; padding-bottom: 4px; }
+.py-8 { padding-top: 8px; padding-bottom: 8px; }
+.py-12 { padding-top: 12px; padding-bottom: 12px; }
+.py-16 { padding-top: 16px; padding-bottom: 16px; }
+.py-20 { padding-top: 20px; padding-bottom: 20px; }
+.py-24 { padding-top: 24px; padding-bottom: 24px; }
+
+/* Width utilities */
+.w-full { width: 100%; }
+.w-50 { width: 50%; }
+.w-33 { width: 33.33%; }
+.w-25 { width: 25%; }
+.w-auto { width: auto; }
+
+/* Max width utilities */
+.max-w-full { max-width: 100%; }
+.max-w-200 { max-width: 200px; }
+.max-w-300 { max-width: 300px; }
+.max-w-400 { max-width: 400px; }
+.max-w-500 { max-width: 500px; }
+.max-w-600 { max-width: 600px; }
+.max-w-800 { max-width: 800px; }
+
+/* Border radius utilities */
+.rounded { border-radius: var(--radius); }
+.rounded-sm { border-radius: 8px; }
+.rounded-lg { border-radius: 20px; }
+.rounded-full { border-radius: 50%; }
+.rounded-none { border-radius: 0; }
+
+/* Position utilities */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.sticky { position: sticky; }
+
+/* Display utilities */
+.block { display: block; }
+.inline-block { display: inline-block; }
+.hidden { display: none; }
+
+/* Overflow utilities */
+.overflow-hidden { overflow: hidden; }
+.overflow-auto { overflow: auto; }
+.overflow-y-auto { overflow-y: auto; }
+.overflow-x-auto { overflow-x: auto; }
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(0.98);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Animation utility classes */
+.fade-in {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.4s ease forwards;
+}
+
+.fade-in-down {
+    animation: fadeInDown 0.4s ease forwards;
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease forwards;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.3s ease forwards;
+}
+
+.pulse {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.spin {
+    animation: spin 0.8s linear infinite;
+}
+
+.shimmer {
+    background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-input) 50%, var(--bg-card) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* Animation delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* ============================================================
+   STATUS BADGES
+   ============================================================ */
+
+.status-pending {
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--warning);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-approved,
+.status-active,
+.status-success {
+    background: rgba(34, 197, 94, 0.15);
+    color: var(--success);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-rejected,
+.status-inactive,
+.status-danger {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--danger);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-read {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-unread {
+    background: rgba(244, 162, 97, 0.15);
+    color: var(--primary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-info {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-warning {
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--warning);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* ============================================================
+   TOOLTIP
+   ============================================================ */
+
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1c2541;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    pointer-events: none;
+}
+
+[data-tooltip]:hover::before {
+    content: '';
+    position: absolute;
+    bottom: calc(100% - 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #1c2541;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* ============================================================
+   LOADING SPINNER
+   ============================================================ */
+
+.loading-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border);
+    border-top: 3px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+.loading-spinner-sm {
+    width: 24px;
+    height: 24px;
+    border-width: 2px;
+}
+
+.loading-spinner-lg {
+    width: 56px;
+    height: 56px;
+    border-width: 4px;
+}
+
+/* ============================================================
+   RESPONSIVE UTILITIES
+   ============================================================ */
+
+/* Hide on specific screen sizes */
+.hide-desktop { display: none; }
+.hide-tablet { display: none; }
+.hide-mobile { display: none; }
+
+@media (max-width: 992px) {
+    .hide-desktop { display: none; }
+    .show-desktop { display: none; }
+    .hide-tablet { display: none; }
+}
+
+@media (max-width: 768px) {
+    .hide-tablet { display: none; }
+    .show-tablet { display: none; }
+    .hide-mobile { display: none; }
+}
+
+@media (max-width: 480px) {
+    .hide-mobile { display: none; }
+    .show-mobile { display: block; }
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:992px){
+
+    .app-container{
+
+        padding:16px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .app-container{
+
+        padding:12px;
+    }
+
+    h1{
+
+        font-size:28px;
+    }
+
+    h2{
+
+        font-size:24px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    input,
+    select,
+    textarea{
+
+        font-size:14px;
+    }
+
+}

@@ -1,0 +1,174 @@
+.students-container {
+  display: flex;
+  min-height: 100vh;
+  background: #081120;
+}
+
+.students-content {
+  flex: 1;
+  padding: 30px;
+}
+
+.page-title {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.summary-card {
+  background: #1c2541;
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.summary-card h2 {
+  margin: 0;
+  color: #f4a261;
+}
+
+.student-form {
+  background: #1c2541;
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+}
+
+.student-form h2 {
+  color: white;
+}
+
+.form-note {
+  color: #94a3b8;
+  font-size: 14px;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.form-grid input,
+.form-grid select {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #0b132b;
+  color: white;
+  font-size: 14px;
+}
+
+.form-grid input::placeholder {
+  color: #6a7a95;
+}
+
+.form-grid select option {
+  background: #0b132b;
+  color: white;
+}
+
+.form-grid input:focus,
+.form-grid select:focus {
+  outline: 2px solid #f4a261;
+}
+
+.save-btn {
+  margin-top: 20px;
+  background: #f4a261;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #0b132b;
+  transition: background 0.3s;
+}
+
+.save-btn:hover {
+  background: #e08f4d;
+}
+
+.table-card {
+  background: #1c2541;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.table-card h2 {
+  color: white;
+}
+
+.search-box {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 20px;
+  background: #0b132b;
+  color: white;
+}
+
+.search-box::placeholder {
+  color: #6a7a95;
+}
+
+.search-box:focus {
+  outline: 2px solid #f4a261;
+}
+
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.students-table th {
+  background: #0b132b;
+  color: #f4a261;
+  padding: 14px;
+  text-align: left;
+}
+
+.students-table td {
+  color: white;
+  padding: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.students-table tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Button Styles */
+.btn-edit {
+  background: #f4a261;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 10px;
+  color: #0b132b;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.btn-edit:hover {
+  background: #e08f4d;
+}
+
+.btn-delete {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-delete:hover {
+  background: #b91c1c;
+}

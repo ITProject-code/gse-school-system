@@ -1,0 +1,345 @@
+/* ============================================================
+   TEACHER SIDEBAR STYLES
+   ============================================================ */
+
+.teacher-sidebar {
+    width: 260px;
+    min-height: 100vh;
+    background: #0b132b;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+}
+
+/* ===== LOGO ===== */
+.teacher-logo {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.teacher-logo h2 {
+    margin: 0;
+    color: #f4a261;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.teacher-logo p {
+    color: #94a3b8;
+    font-size: 12px;
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+}
+
+/* ===== TEACHER INFO ===== */
+.teacher-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.teacher-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(244, 162, 97, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.teacher-info .teacher-name {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.teacher-info .teacher-id {
+    color: #6a7a95;
+    font-size: 11px;
+    margin: 2px 0 0 0;
+}
+
+/* ===== MENU ===== */
+.teacher-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+
+.teacher-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.teacher-menu a .menu-icon {
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.teacher-menu a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    transform: translateX(4px);
+}
+
+.teacher-menu a.active {
+    background: rgba(244, 162, 97, 0.12);
+    color: #f4a261;
+    border-right: 3px solid #f4a261;
+}
+
+.teacher-menu a.active .menu-icon {
+    color: #f4a261;
+}
+
+.teacher-menu a.active:hover {
+    background: rgba(244, 162, 97, 0.18);
+}
+
+/* ===== BOTTOM ===== */
+.teacher-sidebar-bottom {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.teacher-logout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.teacher-logout-btn .menu-icon {
+    font-size: 18px;
+}
+
+.teacher-logout-btn:hover {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+/* ===== SCROLLBAR ===== */
+.teacher-sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.teacher-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.teacher-sidebar::-webkit-scrollbar-thumb {
+    background: #2d3d63;
+    border-radius: 10px;
+}
+
+.teacher-sidebar::-webkit-scrollbar-thumb:hover {
+    background: #3d4d73;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .teacher-sidebar {
+        width: 230px;
+        padding: 20px 16px;
+    }
+
+    .teacher-logo h2 {
+        font-size: 22px;
+    }
+
+    .teacher-menu a {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+
+    .teacher-menu a .menu-icon {
+        font-size: 16px;
+        width: 20px;
+    }
+
+    .teacher-logout-btn {
+        font-size: 13px;
+        padding: 10px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .teacher-sidebar {
+        width: 200px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        padding: 16px 14px;
+    }
+
+    .teacher-sidebar.open {
+        transform: translateX(0);
+    }
+
+    .teacher-sidebar-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 999;
+    }
+
+    .teacher-sidebar-overlay.show {
+        display: block;
+    }
+
+    .teacher-logo h2 {
+        font-size: 18px;
+    }
+
+    .teacher-logo p {
+        font-size: 10px;
+    }
+
+    .teacher-info {
+        padding: 10px 12px;
+    }
+
+    .teacher-avatar {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+
+    .teacher-info .teacher-name {
+        font-size: 12px;
+    }
+
+    .teacher-info .teacher-id {
+        font-size: 10px;
+    }
+
+    .teacher-menu a {
+        padding: 8px 12px;
+        font-size: 12px;
+        gap: 10px;
+    }
+
+    .teacher-menu a .menu-icon {
+        font-size: 14px;
+        width: 18px;
+    }
+
+    .teacher-logout-btn {
+        font-size: 12px;
+        padding: 10px 14px;
+    }
+
+    .teacher-logout-btn .menu-icon {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .teacher-sidebar {
+        width: 180px;
+        padding: 12px 10px;
+    }
+
+    .teacher-logo h2 {
+        font-size: 16px;
+    }
+
+    .teacher-logo p {
+        font-size: 9px;
+    }
+
+    .teacher-menu a {
+        padding: 6px 10px;
+        font-size: 11px;
+        gap: 8px;
+        border-radius: 8px;
+    }
+
+    .teacher-menu a .menu-icon {
+        font-size: 12px;
+        width: 16px;
+    }
+
+    .teacher-logout-btn {
+        font-size: 11px;
+        padding: 8px 12px;
+    }
+
+    .teacher-logout-btn .menu-icon {
+        font-size: 12px;
+    }
+}
+
+/* ===== SIDEBAR TOGGLE BUTTON (Mobile) ===== */
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 1001;
+    background: #0b132b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .sidebar-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

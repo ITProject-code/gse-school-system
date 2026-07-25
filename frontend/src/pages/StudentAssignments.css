@@ -1,0 +1,1018 @@
+/* ==================== CONTAINER ==================== */
+.student-assignments-container {
+    display: flex;
+    min-height: 100vh;
+    background: #081120;
+}
+
+/* ==================== STUDENT SIDEBAR ==================== */
+.student-sidebar {
+    width: 260px;
+    min-height: 100vh;
+    background: #0b132b;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+}
+
+.student-logo {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.student-logo h2 {
+    margin: 0;
+    color: #f4a261;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.student-logo p {
+    color: #94a3b8;
+    font-size: 12px;
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+}
+
+.student-profile-mini {
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 20px;
+}
+
+.student-profile-mini .avatar-icon {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.student-profile-mini .student-name {
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 5px 0 2px 0;
+}
+
+.student-profile-mini .student-id {
+    color: #6a7a95;
+    font-size: 12px;
+    margin: 0;
+}
+
+.student-nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+}
+
+.student-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: none;
+    background: transparent;
+    color: #94a3b8;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    text-align: left;
+}
+
+.student-nav-link:hover {
+    background: #1c2541;
+    color: white;
+}
+
+.student-nav-link.active {
+    background: #f4a261;
+    color: #0b132b;
+    font-weight: 600;
+}
+
+.student-sidebar-bottom {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.student-logout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    transition: background 0.3s;
+    font-size: 14px;
+}
+
+.student-logout-btn:hover {
+    background: #b91c1c;
+}
+
+/* ==================== MAIN CONTENT ==================== */
+.student-assignments-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.page-title {
+    color: white;
+    font-size: 28px;
+    margin: 0;
+}
+
+.student-badge {
+    background: #1c2541;
+    color: #94a3b8;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.student-badge svg {
+    color: #f4a261;
+}
+
+/* ==================== MESSAGES ==================== */
+.message {
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.message.success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.message.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.message.info {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+/* ==================== LOADING & NO DATA ==================== */
+.loading-state {
+    text-align: center;
+    color: #94a3b8;
+    padding: 60px 0;
+    font-size: 16px;
+}
+
+.no-data {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.no-data-icon {
+    font-size: 64px;
+    margin-bottom: 15px;
+}
+
+.no-data h3 {
+    color: white;
+    font-size: 20px;
+    margin: 0 0 10px 0;
+}
+
+.no-data p {
+    color: #6a7a95;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* ==================== ASSIGNMENTS GRID ==================== */
+.assignments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.assignment-card {
+    background: #1c2541;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s;
+    position: relative;
+}
+
+.assignment-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(244, 162, 97, 0.3);
+}
+
+.assignment-card.submitted {
+    border-left: 4px solid #22C55E;
+}
+
+.assignment-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.assignment-card-title h3 {
+    color: white;
+    margin: 0;
+    font-size: 18px;
+}
+
+.assignment-subject-badge {
+    display: inline-block;
+    background: #0b132b;
+    color: #f4a261;
+    padding: 2px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.assignment-status {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.assignment-status.submitted {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.assignment-status.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.assignment-card-body {
+    margin-bottom: 15px;
+}
+
+.assignment-description {
+    color: #c0cfe0;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 10px 0;
+}
+
+.assignment-instructions {
+    background: #0b132b;
+    padding: 12px 16px;
+    border-radius: 8px;
+}
+
+.assignment-instructions strong {
+    color: #f4a261;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.assignment-instructions p {
+    color: #c0cfe0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.assignment-card-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 15px;
+}
+
+.assignment-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.meta-item {
+    color: #94a3b8;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.meta-item svg {
+    color: #6a7a95;
+}
+
+.overdue-badge {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.download-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #3B82F6;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.download-link:hover {
+    color: #2563EB;
+    text-decoration: underline;
+}
+
+/* ==================== SUBMISSION DETAILS ==================== */
+.submission-details {
+    background: #0b132b;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.submission-status-badge {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.submission-grade-details {
+    margin-top: 8px;
+}
+
+.grade-score {
+    color: #22C55E;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.grade-feedback {
+    background: #1c2541;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border-left: 3px solid #f4a261;
+}
+
+.grade-feedback strong {
+    color: #f4a261;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.grade-feedback p {
+    color: #c0cfe0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.submission-date {
+    color: #6a7a95;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+/* ==================== BUTTONS ==================== */
+.btn-submit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #22C55E;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.3s;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-submit:hover {
+    background: #16a34a;
+}
+
+.btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.overdue-message {
+    display: block;
+    color: #dc2626;
+    font-weight: 600;
+    text-align: center;
+    padding: 8px;
+    background: rgba(220, 38, 38, 0.1);
+    border-radius: 8px;
+}
+
+.no-submission-message {
+    display: block;
+    color: #F59E0B;
+    font-weight: 600;
+    text-align: center;
+    padding: 8px;
+    background: rgba(245, 158, 11, 0.1);
+    border-radius: 8px;
+}
+
+/* ==================== SUBMISSIONS LIST ==================== */
+.submissions-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.submission-card {
+    background: #1c2541;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s;
+}
+
+.submission-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(244, 162, 97, 0.3);
+}
+
+.submission-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.submission-card-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 17px;
+}
+
+.submission-status {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.submission-status.status-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.submission-status.status-graded {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.submission-status.status-returned {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+.submission-meta {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.submission-subject {
+    color: #f4a261;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.submission-date {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.submission-content {
+    background: #0b132b;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.submission-content strong {
+    color: #f4a261;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.submission-content p {
+    color: #c0cfe0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.submission-download-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #3B82F6;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.submission-download-link:hover {
+    text-decoration: underline;
+    color: #2563EB;
+}
+
+/* ==================== MODAL ==================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.modal-content {
+    background: #1c2541;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow: auto;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: #0b132b;
+    border-radius: 20px 20px 0 0;
+}
+
+.modal-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 20px;
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-close:hover {
+    color: white;
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+.modal-assignment-info {
+    background: #0b132b;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.modal-assignment-info h4 {
+    color: #f4a261;
+    margin: 0 0 8px 0;
+    font-size: 18px;
+}
+
+.modal-assignment-info p {
+    color: #94a3b8;
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+.modal-assignment-info strong {
+    color: white;
+}
+
+.modal-instructions {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.modal-instructions strong {
+    color: #f4a261;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.modal-instructions p {
+    color: #c0cfe0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.modal-body .form-group {
+    margin-bottom: 18px;
+}
+
+.modal-body .form-group label {
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.modal-body .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #0b132b;
+    color: white;
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 120px;
+}
+
+.modal-body .form-group textarea:focus {
+    outline: 2px solid #f4a261;
+}
+
+.modal-body .form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: #0b132b;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.form-hint {
+    color: #6a7a95;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.file-name {
+    color: #22C55E;
+    font-size: 13px;
+    margin-top: 6px;
+    padding: 4px 10px;
+    background: rgba(34, 197, 94, 0.1);
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.form-actions .btn-submit {
+    flex: 1;
+    padding: 12px;
+    font-size: 15px;
+}
+
+.btn-cancel {
+    flex: 1;
+    background: #6a7a95;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background 0.3s;
+}
+
+.btn-cancel:hover {
+    background: #5a6a85;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+    .student-assignments-container {
+        flex-direction: column;
+    }
+
+    .student-sidebar {
+        width: 100%;
+        min-height: auto;
+        flex-direction: row;
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        align-items: center;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .student-logo {
+        margin-bottom: 0;
+        margin-right: 20px;
+    }
+
+    .student-logo h2 {
+        font-size: 22px;
+    }
+
+    .student-profile-mini {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 0;
+        border-bottom: none;
+        margin-bottom: 0;
+        margin-right: 20px;
+    }
+
+    .student-profile-mini .avatar-icon {
+        font-size: 28px;
+        margin-bottom: 0;
+    }
+
+    .student-profile-mini .student-name {
+        font-size: 14px;
+    }
+
+    .student-profile-mini .student-id {
+        font-size: 11px;
+    }
+
+    .student-nav-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+        flex: 1;
+    }
+
+    .student-nav-link {
+        padding: 8px 16px;
+        font-size: 13px;
+        width: auto;
+    }
+
+    .student-sidebar-bottom {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+    }
+
+    .student-logout-btn {
+        width: auto;
+        padding: 8px 16px;
+    }
+
+    .student-assignments-content {
+        padding: 20px;
+    }
+
+    .assignments-grid,
+    .submissions-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .student-sidebar {
+        flex-direction: column;
+        padding: 15px;
+        align-items: stretch;
+    }
+
+    .student-logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .student-profile-mini {
+        justify-content: center;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .student-nav-menu {
+        justify-content: center;
+    }
+
+    .student-nav-link {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .student-sidebar-bottom {
+        margin-top: 10px;
+    }
+
+    .student-logout-btn {
+        width: 100%;
+    }
+
+    .student-assignments-content {
+        padding: 15px;
+    }
+
+    .page-title {
+        font-size: 22px;
+    }
+
+    .assignment-card {
+        padding: 18px;
+    }
+
+    .assignment-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .modal-content {
+        max-width: 95%;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn-submit,
+    .btn-cancel {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .student-sidebar {
+        padding: 12px;
+    }
+
+    .student-logo h2 {
+        font-size: 20px;
+    }
+
+    .student-nav-link {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+
+    .student-assignments-content {
+        padding: 10px;
+    }
+
+    .page-title {
+        font-size: 20px;
+    }
+
+    .assignment-card {
+        padding: 14px;
+    }
+
+    .assignment-card-title h3 {
+        font-size: 15px;
+    }
+
+    .assignment-meta {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .modal-body {
+        padding: 16px;
+    }
+
+    .modal-body .form-group textarea {
+        min-height: 80px;
+    }
+
+    .submission-card {
+        padding: 14px;
+    }
+
+    .submission-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+/* ==================== BACK TO DASHBOARD ==================== */
+.page-header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.back-to-dashboard-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s;
+    width: fit-content;
+}
+
+.back-to-dashboard-btn:hover {
+    background: #1c2541;
+    color: white;
+}
+
+.student-nav-link.back-link {
+    background: rgba(244, 162, 97, 0.15) !important;
+    color: #f4a261 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 10px;
+}
+
+.student-nav-link.back-link:hover {
+    background: rgba(244, 162, 97, 0.25) !important;
+    color: #f4a261 !important;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+    .page-header-left {
+        flex-direction: column;
+    }
+    
+    .back-to-dashboard-btn {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header-left {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .back-to-dashboard-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 10px;
+    }
+}

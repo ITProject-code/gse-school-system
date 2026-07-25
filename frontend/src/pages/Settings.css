@@ -1,0 +1,336 @@
+.settings-container {
+    display: flex;
+    min-height: 100vh;
+    background: #081120;
+}
+
+.settings-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.page-title {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Message */
+.message {
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.message.success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.message.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Tabs */
+.settings-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: #1c2541;
+    color: #94a3b8;
+    border: 2px solid transparent;
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.tab-btn:hover {
+    background: #2a3555;
+    color: white;
+}
+
+.tab-btn.active {
+    background: #f4a261;
+    color: #0b132b;
+    border-color: #f4a261;
+}
+
+/* Loading */
+.loading-state {
+    text-align: center;
+    color: #94a3b8;
+    padding: 40px;
+}
+
+/* Settings Section */
+.settings-section {
+    background: #1c2541;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+}
+
+.settings-section h2 {
+    color: white;
+    margin: 0 0 20px 0;
+}
+
+.settings-section h3 {
+    color: white;
+    margin: 20px 0 15px 0;
+    font-size: 16px;
+}
+
+/* Form */
+.settings-form {
+    margin-bottom: 25px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: #94a3b8;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: none;
+    background: #0b132b;
+    color: white;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: 2px solid #f4a261;
+}
+
+.form-group input::placeholder {
+    color: #6a7a95;
+}
+
+.form-group.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding-top: 20px;
+}
+
+.form-group.checkbox-group label {
+    color: white;
+    text-transform: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.form-group.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #f4a261;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.save-btn {
+    background: #f4a261;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #0b132b;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+.save-btn:hover {
+    background: #e08f4d;
+}
+
+.cancel-btn {
+    background: #6a7a95;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    margin-top: 15px;
+    margin-left: 10px;
+    transition: background 0.3s;
+}
+
+.cancel-btn:hover {
+    background: #5a6a85;
+}
+
+/* Settings List */
+.settings-list {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.settings-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+.settings-table th {
+    background: #0b132b;
+    color: #f4a261;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.settings-table td {
+    color: white;
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.settings-table tr:hover td {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* Status Badge */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-badge.active {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge.inactive {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Buttons in Table */
+.btn-edit {
+    background: #f4a261;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 8px;
+    color: #0b132b;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn-edit:hover {
+    background: #e08f4d;
+}
+
+.btn-delete {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-delete:hover {
+    background: #b91c1c;
+}
+
+.no-data {
+    color: #6a7a95;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .settings-content {
+        padding: 15px;
+    }
+
+    .settings-tabs {
+        flex-direction: column;
+    }
+
+    .tab-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: 1;
+    }
+
+    .settings-table {
+        font-size: 13px;
+        min-width: 100%;
+    }
+
+    .settings-table th,
+    .settings-table td {
+        padding: 8px 10px;
+    }
+
+    .form-group.checkbox-group {
+        padding-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .settings-content {
+        padding: 10px;
+    }
+
+    .page-title {
+        font-size: 22px;
+    }
+
+    .settings-section {
+        padding: 15px;
+    }
+}

@@ -1,0 +1,843 @@
+/* Teacher Messages styles - inherits from Messages.css with teacher-specific overrides */
+
+.teacher-messages-container {
+    display: flex;
+    min-height: 100vh;
+    background: #081120;
+}
+
+.teacher-messages-content {
+    flex: 1;
+    padding: 30px 35px;
+    overflow-y: auto;
+}
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.page-title {
+    color: white;
+    font-size: 28px;
+    margin: 0;
+}
+
+.page-subtitle {
+    color: #94a3b8;
+    font-size: 14px;
+    margin: 5px 0 0 0;
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn-compose {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #f4a261, #e08f4d);
+    color: #0b132b;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-compose:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(244, 162, 97, 0.3);
+}
+
+.btn-mark-all {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(34, 197, 94, 0.12);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-mark-all:hover {
+    background: rgba(34, 197, 94, 0.2);
+}
+
+/* ===== MESSAGE ===== */
+.message {
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.message.success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.message.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.message.warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+/* ===== BULK ACTIONS ===== */
+.bulk-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 15px;
+    background: #0b132b;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.select-all-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.select-all-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #f4a261;
+    cursor: pointer;
+}
+
+.msg-checkbox {
+    width: 16px;
+    height: 16px;
+    accent-color: #f4a261;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-right: 4px;
+}
+
+.btn-delete-bulk {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(220, 38, 38, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    padding: 6px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-delete-bulk:hover {
+    background: rgba(220, 38, 38, 0.25);
+}
+
+.teacher-messages-layout {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 20px;
+    background: #1c2541;
+    border-radius: 16px;
+    overflow: hidden;
+    min-height: 500px;
+}
+
+.teacher-messages-list {
+    background: #0b132b;
+    padding: 10px;
+    overflow-y: auto;
+    max-height: 600px;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.loading-state {
+    text-align: center;
+    color: #94a3b8;
+    padding: 40px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.empty-icon {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.empty-state h3 {
+    color: white;
+    font-size: 18px;
+    margin: 0 0 8px 0;
+}
+
+.empty-state p {
+    color: #6a7a95;
+    font-size: 14px;
+    margin: 0;
+}
+
+.teacher-msg-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.teacher-msg-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.teacher-msg-item.unread {
+    background: rgba(244, 162, 97, 0.05);
+}
+
+.teacher-msg-item.selected {
+    background: rgba(244, 162, 97, 0.1);
+    border: 1px solid rgba(244, 162, 97, 0.15);
+}
+
+.teacher-msg-left {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    flex: 1;
+    min-width: 0;
+}
+
+.unread-dot {
+    width: 8px;
+    height: 8px;
+    background: #f4a261;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 8px;
+}
+
+.teacher-msg-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.teacher-msg-sender {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.teacher-msg-sender strong {
+    color: white;
+    font-size: 14px;
+}
+
+.unread-badge {
+    background: #f4a261;
+    color: #0b132b;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 8px;
+    border-radius: 10px;
+}
+
+.sender-role-tag {
+    font-size: 11px;
+    color: #94a3b8;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1px 10px;
+    border-radius: 12px;
+}
+
+.teacher-msg-subject {
+    color: #94a3b8;
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.teacher-msg-meta {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+    flex-wrap: wrap;
+}
+
+.receiver-tag {
+    font-size: 11px;
+    color: #6a7a95;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1px 10px;
+    border-radius: 12px;
+}
+
+.msg-time {
+    font-size: 11px;
+    color: #6a7a95;
+}
+
+.teacher-msg-right {
+    display: flex;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.btn-delete-small {
+    background: transparent;
+    border: none;
+    color: #6a7a95;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+.btn-delete-small:hover {
+    background: rgba(220, 38, 38, 0.15);
+    color: #f87171;
+}
+
+/* ===== CLEAR CONVERSATION BUTTONS ===== */
+.btn-clear-small {
+    background: transparent;
+    border: none;
+    color: #f59e0b;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+.btn-clear-small:hover {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+}
+
+.btn-clear-sm {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-clear-sm:hover {
+    background: rgba(245, 158, 11, 0.25);
+}
+
+.teacher-message-detail {
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+.no-message-selected {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #6a7a95;
+    text-align: center;
+}
+
+.no-message-icon {
+    font-size: 64px;
+    margin-bottom: 16px;
+}
+
+.no-message-selected h3 {
+    color: #94a3b8;
+    margin: 0 0 8px 0;
+}
+
+.no-message-selected p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.teacher-msg-detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.teacher-msg-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.teacher-msg-detail-sender {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.sender-avatar {
+    font-size: 36px;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.teacher-msg-detail-sender h3 {
+    color: white;
+    margin: 0;
+    font-size: 18px;
+}
+
+.sender-role {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.teacher-msg-detail-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.btn-reply-sm {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-reply-sm:hover {
+    background: rgba(59, 130, 246, 0.25);
+}
+
+.btn-delete-sm {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(220, 38, 38, 0.15);
+    color: #f87171;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-delete-sm:hover {
+    background: rgba(220, 38, 38, 0.25);
+}
+
+.teacher-msg-detail-subject {
+    color: #94a3b8;
+    font-size: 14px;
+    padding: 8px 12px;
+    background: #0b132b;
+    border-radius: 8px;
+}
+
+.teacher-msg-detail-subject strong {
+    color: #f4a261;
+}
+
+.teacher-msg-detail-body {
+    background: #0b132b;
+    padding: 16px;
+    border-radius: 12px;
+    min-height: 150px;
+}
+
+.teacher-msg-detail-body p {
+    color: #c0cfe0;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.teacher-msg-detail-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-time {
+    color: #6a7a95;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.detail-status {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.detail-status.read {
+    color: #4ade80;
+}
+
+.detail-status.unread {
+    color: #f4a261;
+}
+
+/* ===== MODAL ===== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-content {
+    background: #1c2541;
+    border-radius: 20px;
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow: auto;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: #0b132b;
+    border-radius: 20px 20px 0 0;
+}
+
+.modal-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 20px;
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-close:hover {
+    color: white;
+}
+
+.modal-form {
+    padding: 24px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-grid .full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: #94a3b8;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: none;
+    background: #0b132b;
+    color: white;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid #f4a261;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.helper-text {
+    color: #6a7a95;
+    font-size: 11px;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn-submit {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #f4a261, #e08f4d);
+    color: #0b132b;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 16px;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(244, 162, 97, 0.3);
+}
+
+.btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-cancel {
+    flex: 1;
+    background: #6a7a95;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 16px;
+}
+
+.btn-cancel:hover {
+    background: #5a6a85;
+}
+
+/* ===== CLEAR CONFIRMATION MODAL ===== */
+.clear-confirm-modal {
+    max-width: 500px !important;
+}
+
+.warning-header {
+    border-bottom-color: #f59e0b !important;
+}
+
+.warning-icon {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.modal-body {
+    padding: 24px;
+    text-align: center;
+}
+
+.modal-body ul {
+    text-align: left;
+    margin: 10px auto;
+    max-width: 350px;
+}
+
+.modal-body ul li {
+    padding: 4px 0;
+}
+
+.btn-danger {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 16px;
+}
+
+.btn-danger:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(220, 38, 38, 0.3);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .teacher-messages-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .teacher-messages-list {
+        max-height: 300px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .teacher-message-detail {
+        max-height: 400px;
+    }
+
+    .teacher-messages-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .teacher-messages-content {
+        padding: 15px;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .header-actions {
+        flex-direction: column;
+    }
+
+    .btn-compose,
+    .btn-mark-all {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .btn-submit,
+    .btn-cancel,
+    .btn-danger {
+        width: 100%;
+    }
+
+    .modal-content {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .teacher-messages-content {
+        padding: 10px;
+    }
+
+    .teacher-msg-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .teacher-msg-right {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .btn-delete-small,
+    .btn-clear-small {
+        align-self: flex-end;
+    }
+
+    .teacher-msg-meta {
+        flex-direction: column;
+        gap: 4px;
+    }
+}

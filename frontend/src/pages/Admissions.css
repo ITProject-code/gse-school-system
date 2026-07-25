@@ -1,0 +1,434 @@
+.admissions-container {
+    display: flex;
+    min-height: 100vh;
+    background: #081120;
+}
+
+.admissions-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.page-title {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.summary-card {
+    background: #1c2541;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.summary-card h2 {
+    margin: 0;
+    color: #f4a261;
+}
+
+.admission-form {
+    background: #1c2541;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+}
+
+.admission-form h2 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.form-note {
+    color: #94a3b8;
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.form-grid input,
+.form-grid select {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #0b132b;
+    color: white;
+    font-size: 14px;
+}
+
+.form-grid input::placeholder {
+    color: #6a7a95;
+}
+
+.form-grid select option {
+    background: #0b132b;
+    color: white;
+}
+
+.form-grid input:focus,
+.form-grid select:focus {
+    outline: 2px solid #f4a261;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.save-btn {
+    background: #f4a261;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #0b132b;
+    transition: background 0.3s;
+}
+
+.save-btn:hover {
+    background: #e08f4d;
+}
+
+.cancel-btn {
+    background: #6a7a95;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: background 0.3s;
+}
+
+.cancel-btn:hover {
+    background: #5a6a85;
+}
+
+.table-card {
+    background: #1c2541;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.table-card h2 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.search-box {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 20px;
+    background: #0b132b;
+    color: white;
+}
+
+.search-box::placeholder {
+    color: #6a7a95;
+}
+
+.search-box:focus {
+    outline: 2px solid #f4a261;
+}
+
+.admissions-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admissions-table th {
+    background: #0b132b;
+    color: #f4a261;
+    padding: 14px;
+    text-align: left;
+}
+
+.admissions-table td {
+    color: white;
+    padding: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admissions-table tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* Status Badge */
+.status-badge {
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.status-badge.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-badge.approved {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.btn-edit {
+    background: #f4a261;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    color: #0b132b;
+    transition: background 0.3s;
+}
+
+.btn-edit:hover {
+    background: #e08f4d;
+}
+
+.btn-approve {
+    background: #22C55E;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-approve:hover {
+    background: #16a34a;
+}
+
+.btn-delete {
+    background: #DC2626;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-delete:hover {
+    background: #b91c1c;
+}
+
+/* ==================== CREDENTIALS MODAL ==================== */
+.credentials-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.credentials-modal {
+    background: #1c2541;
+    border-radius: 20px;
+    max-width: 460px;
+    width: 90%;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.credentials-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background: #0b132b;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.credentials-header h2 {
+    color: #22C55E;
+    margin: 0;
+    font-size: 20px;
+}
+
+.credentials-close-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.credentials-close-btn:hover {
+    color: white;
+}
+
+.credentials-body {
+    padding: 24px;
+}
+
+.credential-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.credential-item:last-of-type {
+    border-bottom: none;
+}
+
+.credential-label {
+    color: #94a3b8;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.credential-value {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.credential-item.password-item .credential-value {
+    background: #0b132b;
+    padding: 4px 12px;
+    border-radius: 6px;
+    color: #f4a261;
+    font-family: monospace;
+    letter-spacing: 1px;
+}
+
+.credential-note {
+    text-align: center;
+    color: #F59E0B;
+    font-size: 13px;
+    padding: 12px 0;
+    background: rgba(245, 158, 11, 0.08);
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.credentials-footer {
+    display: flex;
+    gap: 12px;
+    padding: 16px 24px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.btn-copy-credentials {
+    flex: 1;
+    background: #3B82F6;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-copy-credentials:hover {
+    background: #2563EB;
+}
+
+.btn-close-credentials {
+    flex: 1;
+    background: #6a7a95;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-close-credentials:hover {
+    background: #5a6a85;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .admissions-content {
+        padding: 15px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admissions-table {
+        font-size: 13px;
+    }
+
+    .admissions-table th,
+    .admissions-table td {
+        padding: 10px 8px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+
+    .credentials-modal {
+        width: 95%;
+    }
+    
+    .credentials-header h2 {
+        font-size: 17px;
+    }
+    
+    .credential-item {
+        flex-direction: column;
+        gap: 4px;
+    }
+    
+    .credentials-footer {
+        flex-direction: column;
+    }
+}

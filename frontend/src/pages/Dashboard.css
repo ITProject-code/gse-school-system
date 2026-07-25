@@ -1,0 +1,774 @@
+/* ==================== DASHBOARD CONTAINER ==================== */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background: #081120;
+}
+
+.dashboard-content {
+    flex: 1;
+    padding: 30px 35px;
+    overflow-y: auto;
+}
+
+/* ==================== HEADER ==================== */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+    background: linear-gradient(135deg, #1c2541, #0b132b);
+    padding: 20px 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.dashboard-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(244, 162, 97, 0.06), transparent 70%);
+    border-radius: 50%;
+}
+
+.page-title {
+    color: #ffffff;
+    font-size: 28px;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-text {
+    color: #94a3b8;
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+}
+
+.school-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.school-icon {
+    color: #f4a261;
+    font-size: 16px;
+}
+
+.school-name {
+    color: #60a5fa;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.header-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #94a3b8;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 16px;
+    border-radius: 10px;
+}
+
+.header-date .date-icon {
+    color: #f4a261;
+    font-size: 16px;
+}
+
+.logout-btn {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3);
+}
+
+/* ==================== LOADING ==================== */
+.loading-state {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    color: #94a3b8;
+    font-size: 18px;
+    gap: 20px;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(244, 162, 97, 0.15);
+    border-top: 4px solid #f4a261;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ==================== STATS GRID ==================== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.stat-card.enhanced {
+    background: #1c2541;
+    padding: 20px 22px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.stat-card.enhanced:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(244, 162, 97, 0.12);
+}
+
+.stat-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.stat-info h3 {
+    color: white;
+    font-size: 24px;
+    margin: 0;
+}
+
+.stat-info p {
+    color: #94a3b8;
+    margin: 2px 0 0 0;
+    font-size: 13px;
+}
+
+/* ==================== ATTENDANCE SUMMARY ==================== */
+.attendance-summary.enhanced {
+    background: #1c2541;
+    padding: 20px 25px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.attendance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.attendance-header h2 {
+    color: white;
+    margin: 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.attendance-date {
+    color: #94a3b8;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 14px;
+    border-radius: 20px;
+}
+
+.attendance-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+}
+
+.attendance-stat {
+    background: #0b132b;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.attendance-stat .attendance-label {
+    color: #94a3b8;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+}
+
+.attendance-stat .attendance-value {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    display: block;
+    margin-top: 5px;
+}
+
+.attendance-stat.present .attendance-value {
+    color: #22C55E;
+}
+
+.attendance-stat.absent .attendance-value {
+    color: #DC2626;
+}
+
+.attendance-stat.late .attendance-value {
+    color: #F59E0B;
+}
+
+.attendance-stat.percentage .attendance-value {
+    color: #f4a261;
+}
+
+.attendance-stat.total .attendance-value {
+    color: #3B82F6;
+}
+
+.attendance-progress {
+    margin-top: 18px;
+}
+
+.progress-bar-bg {
+    background: #0b132b;
+    height: 8px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #f4a261, #22C55E);
+    border-radius: 10px;
+    transition: width 0.8s ease;
+}
+
+.progress-label {
+    display: block;
+    color: #94a3b8;
+    font-size: 13px;
+    margin-top: 6px;
+    text-align: center;
+}
+
+/* ==================== QUICK ACTIONS ==================== */
+.quick-actions.enhanced {
+    background: #1c2541;
+    padding: 20px 25px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.quick-actions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.quick-actions-header h2 {
+    color: white;
+    margin: 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quick-actions-badge {
+    background: rgba(244, 162, 97, 0.15);
+    color: #f4a261;
+    padding: 2px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.action-btn.enhanced {
+    background: #0b132b;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 14px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.action-btn.enhanced:hover {
+    background: var(--hover-color, #f4a261);
+    color: #0b132b;
+    transform: translateY(-3px);
+    border-color: var(--hover-color, #f4a261);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.action-icon {
+    font-size: 16px;
+}
+
+/* ==================== DASHBOARD TWO COLUMN ==================== */
+.dashboard-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.col-left,
+.col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* ==================== DASHBOARD CARDS ==================== */
+.dashboard-card.enhanced {
+    background: #1c2541;
+    padding: 20px 22px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: all 0.3s ease;
+}
+
+.dashboard-card.enhanced:hover {
+    border-color: rgba(244, 162, 97, 0.08);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-header h2 {
+    color: white;
+    margin: 0;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-badge {
+    background: rgba(255, 255, 255, 0.06);
+    color: #94a3b8;
+    padding: 2px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* ==================== RECENT TABLES ==================== */
+.recent-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.recent-table th {
+    color: #f4a261;
+    padding: 10px 8px;
+    text-align: left;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.recent-table td {
+    color: white;
+    padding: 10px 8px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.recent-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.id-badge {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: #94a3b8;
+    display: inline-block;
+}
+
+/* ==================== STATUS BADGE ==================== */
+.status-badge {
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.status-badge.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-badge.approved {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge.rejected {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.status-badge.active {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+/* ==================== MINI STATS ROW ==================== */
+.mini-stats-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.mini-stat.enhanced {
+    background: #0b132b;
+    padding: 14px 16px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: all 0.3s ease;
+}
+
+.mini-stat.enhanced:hover {
+    border-color: rgba(244, 162, 97, 0.12);
+}
+
+.mini-stat-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.mini-stat-icon.green {
+    background: rgba(34, 197, 94, 0.12);
+    color: #22C55E;
+}
+
+.mini-stat-icon.blue {
+    background: rgba(59, 130, 246, 0.12);
+    color: #3B82F6;
+}
+
+.mini-stat-icon.gold {
+    background: rgba(244, 162, 97, 0.12);
+    color: #f4a261;
+}
+
+.mini-stat-icon.red {
+    background: rgba(220, 38, 38, 0.12);
+    color: #DC2626;
+}
+
+.mini-stat-value {
+    display: block;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.mini-stat-label {
+    display: block;
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+/* ==================== NO DATA ==================== */
+.no-data {
+    color: #6a7a95;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+    .dashboard-two-col {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .dashboard-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-content {
+        padding: 15px;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px 20px;
+    }
+
+    .header-right {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .header-date {
+        justify-content: center;
+    }
+
+    .logout-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .page-title {
+        font-size: 22px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .stat-card.enhanced {
+        padding: 14px 16px;
+    }
+
+    .stat-icon-wrapper {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .stat-info h3 {
+        font-size: 20px;
+    }
+
+    .attendance-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .attendance-stat {
+        padding: 10px;
+    }
+
+    .attendance-stat .attendance-value {
+        font-size: 20px;
+    }
+
+    .actions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+    }
+
+    .action-btn.enhanced {
+        padding: 12px 14px;
+        font-size: 12px;
+    }
+
+    .dashboard-two-col {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .mini-stats-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .recent-table {
+        font-size: 12px;
+    }
+
+    .recent-table th,
+    .recent-table td {
+        padding: 6px 6px;
+    }
+
+    .card-header h2 {
+        font-size: 15px;
+    }
+
+    .card-badge {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-content {
+        padding: 10px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .stat-card.enhanced {
+        padding: 12px 14px;
+        gap: 10px;
+    }
+
+    .stat-icon-wrapper {
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+    }
+
+    .stat-info h3 {
+        font-size: 17px;
+    }
+
+    .stat-info p {
+        font-size: 11px;
+    }
+
+    .attendance-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .attendance-stat .attendance-value {
+        font-size: 17px;
+    }
+
+    .attendance-stat .attendance-label {
+        font-size: 10px;
+    }
+
+    .actions-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .action-btn.enhanced {
+        padding: 10px 12px;
+        font-size: 11px;
+        gap: 6px;
+    }
+
+    .action-icon {
+        font-size: 14px;
+    }
+
+    .mini-stats-row {
+        grid-template-columns: 1fr;
+    }
+
+    .recent-table {
+        font-size: 11px;
+    }
+
+    .recent-table th,
+    .recent-table td {
+        padding: 4px 4px;
+    }
+
+    .id-badge {
+        font-size: 10px;
+        padding: 1px 6px;
+    }
+
+    .dashboard-card.enhanced {
+        padding: 14px 16px;
+    }
+
+    .page-title {
+        font-size: 18px;
+        color: #ffffff;
+    }
+
+    .welcome-text {
+        font-size: 12px;
+    }
+
+    .school-name {
+        font-size: 12px;
+    }
+
+    .quick-actions-header h2 {
+        font-size: 15px;
+    }
+
+    .quick-actions-badge {
+        font-size: 10px;
+        padding: 1px 10px;
+    }
+}

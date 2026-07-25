@@ -1,0 +1,187 @@
+.teacher-subjects-container {
+    display: flex;
+    min-height: 100vh;
+    background: #081120;
+}
+
+.teacher-subjects-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.page-title {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.summary-card {
+    background: #1c2541;
+    color: white;
+    padding: 20px 25px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+.summary-card h2 {
+    margin: 0;
+    color: #f4a261;
+    font-size: 18px;
+}
+
+.assignment-form {
+    background: #1c2541;
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+}
+
+.assignment-form h2 {
+    color: white;
+    margin: 0 0 20px 0;
+    font-size: 18px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.form-grid select {
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: none;
+    background: #0b132b;
+    color: white;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-grid select option {
+    background: #0b132b;
+    color: white;
+}
+
+.form-grid select:focus {
+    outline: 2px solid #f4a261;
+}
+
+.save-btn {
+    margin-top: 20px;
+    background: #f4a261;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    color: #0b132b;
+    transition: background 0.3s;
+}
+
+.save-btn:hover {
+    background: #e08f4d;
+}
+
+.table-card {
+    background: #1c2541;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.table-card h2 {
+    color: white;
+    margin: 0 0 15px 0;
+    font-size: 18px;
+}
+
+.no-data {
+    color: #6a7a95;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 14px;
+}
+
+.assignments-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.assignments-table th {
+    background: #0b132b;
+    color: #f4a261;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.assignments-table td {
+    color: white;
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 14px;
+}
+
+.assignments-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.btn-delete {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn-delete:hover {
+    background: #b91c1c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .teacher-subjects-content {
+        padding: 15px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .assignments-table {
+        font-size: 12px;
+    }
+
+    .assignments-table th,
+    .assignments-table td {
+        padding: 10px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .teacher-subjects-content {
+        padding: 10px;
+    }
+
+    .page-title {
+        font-size: 22px;
+    }
+
+    .assignments-table {
+        font-size: 11px;
+    }
+
+    .assignments-table th,
+    .assignments-table td {
+        padding: 6px 8px;
+    }
+}

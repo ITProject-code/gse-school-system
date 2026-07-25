@@ -1,0 +1,336 @@
+.assessments-container {
+    display: flex;
+    min-height: 100vh;
+    background: #081120;
+}
+
+.assessments-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.page-title {
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Selection Card */
+.selection-card {
+    background: #1c2541;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: #94a3b8;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+
+.form-group select,
+.form-group input {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: none;
+    background: #0b132b;
+    color: white;
+    font-size: 14px;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+    outline: 2px solid #f4a261;
+}
+
+.form-group select option {
+    background: #0b132b;
+    color: white;
+}
+
+/* Semester Status */
+.semester-status {
+    background: #1c2541;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.semester-status h3 {
+    color: white;
+    margin: 0 0 15px 0;
+}
+
+.status-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.status-item {
+    text-align: center;
+    padding: 10px;
+    background: #0b132b;
+    border-radius: 10px;
+}
+
+.status-label {
+    display: block;
+    color: #94a3b8;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-value {
+    display: block;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.status-grade {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    margin-top: 5px;
+    min-width: 30px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.status-badge.complete {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge.incomplete {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+/* Assessment Form */
+.assessment-form {
+    background: #1c2541;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+}
+
+.assessment-form h2 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.form-grid .form-group label {
+    color: #94a3b8;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+
+.form-grid .form-group input,
+.form-grid .form-group select {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: none;
+    background: #0b132b;
+    color: white;
+    font-size: 14px;
+}
+
+.form-grid .form-group input:focus,
+.form-grid .form-group select:focus {
+    outline: 2px solid #f4a261;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.save-btn {
+    background: #f4a261;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #0b132b;
+    transition: background 0.3s;
+}
+
+.save-btn:hover {
+    background: #e08f4d;
+}
+
+.save-btn:disabled {
+    background: #6a7a95;
+    cursor: not-allowed;
+}
+
+.cancel-btn {
+    background: #6a7a95;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: background 0.3s;
+}
+
+.cancel-btn:hover {
+    background: #5a6a85;
+}
+
+/* Table */
+.table-card {
+    background: #1c2541;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.table-card h2 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.no-data {
+    color: #6a7a95;
+    text-align: center;
+    padding: 20px;
+}
+
+.assessments-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.assessments-table th {
+    background: #0b132b;
+    color: #f4a261;
+    padding: 12px;
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.assessments-table td {
+    color: white;
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.assessments-table tr:hover td {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.type-badge {
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+    display: inline-block;
+}
+
+.btn-edit {
+    background: #f4a261;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 8px;
+    color: #0b132b;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn-edit:hover {
+    background: #e08f4d;
+}
+
+.btn-delete {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-delete:hover {
+    background: #b91c1c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .assessments-content {
+        padding: 15px;
+    }
+
+    .selection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .assessments-table {
+        font-size: 13px;
+    }
+
+    .assessments-table th,
+    .assessments-table td {
+        padding: 8px 6px;
+    }
+
+    .status-details {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+}
