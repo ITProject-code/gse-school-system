@@ -48,12 +48,15 @@ app.get("/", async (req, res) => {
       message: "GSEMS API Running",
       database_time: result.rows[0].now,
     });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({
-      message: "Database connection failed",
-    });
-  }
+ } catch (error) {
+  console.error("Database Error:", error);
+
+  res.status(500).json({
+    message: "Database connection failed",
+    error: error.message,
+    code: error.code,
+  });
+}
 });
 
 // Routes
