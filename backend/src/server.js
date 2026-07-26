@@ -44,19 +44,29 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.get("/", async (req, res) => {
   try {
     const result = await pool.query("SELECT NOW()");
+
+    const tables = await pool.query(`
+      SELECT table_name
+      FROM information_schema.tables
+      WHERE table_schema='public'
+      ORDER BY table_name
+    `);
+
     res.json({
       message: "GSEMS API Running",
       database_time: result.rows[0].now,
+      using_database_url: !!process.env.DATABASE_URL,
+      tables: tables.rows.map(t => t.table_name)
     });
- } catch (error) {
-  console.error("Database Error:", error);
 
-  res.status(500).json({
-    message: "Database connection failed",
-    error: error.message,
-    code: error.code,
-  });
-}
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "Database connection failed",
+      error: error.message
+    });
+  }
 });
 
 // Routes
