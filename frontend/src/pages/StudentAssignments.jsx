@@ -361,7 +361,7 @@ function StudentAssignments() {
                                                     </span>
                                                     {assignment.file_url && (
                                                         <a 
-                                                            href={`http://localhost:5000${assignment.file_url}`} 
+                                                            href={`${import.meta.env.VITE_API_URL.replace("/api", "")}${assignment.file_url}`} 
                                                             target="_blank" 
                                                             rel="noopener noreferrer"
                                                             className="download-link"
@@ -448,7 +448,7 @@ function StudentAssignments() {
                                         )}
                                         {submission.file_url && (
                                             <a 
-                                                href={`http://localhost:5000${submission.file_url}`} 
+                                                href={`${import.meta.env.VITE_API_URL.replace("/api", "")}${submission.file_url}`} 
                                                 target="_blank" 
                                                 rel="noopener noreferrer"
                                                 className="submission-download-link"

@@ -840,7 +840,7 @@ function TeacherAssignments() {
                                                     )}
                                                     {submission.file_url && (
                                                         <a
-                                                            href={`http://localhost:5000${submission.file_url}`}
+                                                            href={`${import.meta.env.VITE_API_URL.replace("/api", "")}${submission.file_url}`}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
                                                             style={{ color: "#3B82F6", fontSize: "12px" }}
