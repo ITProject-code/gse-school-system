@@ -14,6 +14,31 @@
     position: sticky;
     top: 0;
     overflow-y: auto;
+    transition: transform 0.3s ease;
+}
+
+/* ===== SIDEBAR HEADER ===== */
+.teacher-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.teacher-sidebar-close-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.teacher-sidebar-close-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
 }
 
 /* ===== LOGO ===== */
@@ -178,6 +203,22 @@
     background: #3d4d73;
 }
 
+/* ===== OVERLAY ===== */
+.teacher-sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+}
+
+.teacher-sidebar-overlay.show {
+    display: block;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 992px) {
     .teacher-sidebar {
@@ -207,7 +248,7 @@
 
 @media (max-width: 768px) {
     .teacher-sidebar {
-        width: 200px;
+        width: 280px;
         position: fixed;
         top: 0;
         left: 0;
@@ -215,22 +256,23 @@
         z-index: 1000;
         transform: translateX(-100%);
         transition: transform 0.3s ease;
-        padding: 16px 14px;
+        padding: 20px 16px;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 4px 0 30px rgba(0, 0, 0, 0.5);
     }
 
     .teacher-sidebar.open {
         transform: translateX(0);
     }
 
+    .teacher-sidebar-close-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .teacher-sidebar-overlay {
         display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 999;
     }
 
     .teacher-sidebar-overlay.show {
@@ -238,7 +280,7 @@
     }
 
     .teacher-logo h2 {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .teacher-logo p {
@@ -250,13 +292,13 @@
     }
 
     .teacher-avatar {
-        width: 32px;
-        height: 32px;
-        font-size: 16px;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
     }
 
     .teacher-info .teacher-name {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .teacher-info .teacher-id {
@@ -264,9 +306,41 @@
     }
 
     .teacher-menu a {
+        padding: 10px 14px;
+        font-size: 13px;
+        gap: 10px;
+    }
+
+    .teacher-menu a .menu-icon {
+        font-size: 16px;
+        width: 20px;
+    }
+
+    .teacher-logout-btn {
+        font-size: 13px;
+        padding: 10px 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .teacher-sidebar {
+        width: 260px;
+        padding: 16px 12px;
+    }
+
+    .teacher-logo h2 {
+        font-size: 18px;
+    }
+
+    .teacher-logo p {
+        font-size: 9px;
+    }
+
+    .teacher-menu a {
         padding: 8px 12px;
         font-size: 12px;
         gap: 10px;
+        border-radius: 8px;
     }
 
     .teacher-menu a .menu-icon {
@@ -276,70 +350,14 @@
 
     .teacher-logout-btn {
         font-size: 12px;
-        padding: 10px 14px;
+        padding: 8px 12px;
     }
 
     .teacher-logout-btn .menu-icon {
         font-size: 14px;
     }
-}
 
-@media (max-width: 480px) {
-    .teacher-sidebar {
-        width: 180px;
-        padding: 12px 10px;
-    }
-
-    .teacher-logo h2 {
-        font-size: 16px;
-    }
-
-    .teacher-logo p {
-        font-size: 9px;
-    }
-
-    .teacher-menu a {
-        padding: 6px 10px;
-        font-size: 11px;
-        gap: 8px;
-        border-radius: 8px;
-    }
-
-    .teacher-menu a .menu-icon {
-        font-size: 12px;
-        width: 16px;
-    }
-
-    .teacher-logout-btn {
-        font-size: 11px;
-        padding: 8px 12px;
-    }
-
-    .teacher-logout-btn .menu-icon {
-        font-size: 12px;
-    }
-}
-
-/* ===== SIDEBAR TOGGLE BUTTON (Mobile) ===== */
-.sidebar-toggle {
-    display: none;
-    position: fixed;
-    top: 12px;
-    left: 12px;
-    z-index: 1001;
-    background: #0b132b;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-@media (max-width: 768px) {
-    .sidebar-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .teacher-sidebar-close-btn {
+        font-size: 20px;
     }
 }

@@ -18,11 +18,13 @@ import {
     FaCalendarAlt,
     FaRocket,
     FaUserTie,
+    FaBars,
 } from "react-icons/fa";
 import "./Dashboard.css";
 
 function Dashboard() {
     const navigate = useNavigate();
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [stats, setStats] = useState({
         stats: {
             students: 0,
@@ -55,6 +57,10 @@ function Dashboard() {
     const [loading, setLoading] = useState(true);
 
     const token = localStorage.getItem("token");
+
+    const toggleSidebar = () => {
+        setIsSidebarOpen(!isSidebarOpen);
+    };
 
     const fetchDashboardStats = async () => {
         try {
@@ -186,7 +192,16 @@ function Dashboard() {
 
     return (
         <div className="dashboard-container">
-            <Sidebar />
+            {/* Hamburger Menu Button - Mobile Only */}
+            <button 
+                className="hamburger-btn" 
+                onClick={toggleSidebar}
+                aria-label="Toggle Sidebar"
+            >
+                <FaBars />
+            </button>
+
+            <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
             <div className="dashboard-content">
                 <div className="dashboard-header">
@@ -321,7 +336,6 @@ function Dashboard() {
                                     )}
                                 </div>
 
-                                {/* 👇 Recent Teacher Applications - NOW WORKING */}
                                 <div className="dashboard-card enhanced">
                                     <div className="card-header">
                                         <h2><FaUserTie /> Recent Teacher Applications</h2>
@@ -394,7 +408,6 @@ function Dashboard() {
                                     )}
                                 </div>
 
-                                {/* Payment Stats */}
                                 <div className="mini-stats-row">
                                     <div className="mini-stat enhanced">
                                         <div className="mini-stat-icon gold"><FaMoneyBillWave /></div>
@@ -412,7 +425,6 @@ function Dashboard() {
                                     </div>
                                 </div>
 
-                                {/* Report Cards Stats */}
                                 <div className="mini-stats-row">
                                     <div className="mini-stat enhanced">
                                         <div className="mini-stat-icon green"><FaCheckCircle /></div>
