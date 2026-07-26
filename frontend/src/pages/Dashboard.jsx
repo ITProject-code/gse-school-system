@@ -18,13 +18,11 @@ import {
     FaCalendarAlt,
     FaRocket,
     FaUserTie,
-    FaBars,
 } from "react-icons/fa";
 import "./Dashboard.css";
 
 function Dashboard() {
     const navigate = useNavigate();
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [stats, setStats] = useState({
         stats: {
             students: 0,
@@ -57,10 +55,6 @@ function Dashboard() {
     const [loading, setLoading] = useState(true);
 
     const token = localStorage.getItem("token");
-
-    const toggleSidebar = () => {
-        setIsSidebarOpen(!isSidebarOpen);
-    };
 
     const fetchDashboardStats = async () => {
         try {
@@ -192,17 +186,6 @@ function Dashboard() {
 
     return (
         <div className="dashboard-container">
-            {/* Hamburger Menu Button - Mobile Only */}
-            <button 
-                className="hamburger-btn" 
-                onClick={toggleSidebar}
-                aria-label="Toggle Sidebar"
-            >
-                <FaBars />
-            </button>
-
-            <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-
             <div className="dashboard-content">
                 <div className="dashboard-header">
                     <div>

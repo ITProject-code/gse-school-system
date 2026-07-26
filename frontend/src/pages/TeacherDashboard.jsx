@@ -20,13 +20,11 @@ import {
     FaAward,
     FaRocket,
     FaRegClock,
-    FaBars,
 } from "react-icons/fa";
 import "./TeacherPortal.css";
 
 function TeacherDashboard() {
     const navigate = useNavigate();
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [loading, setLoading] = useState(true);
     const [dashboard, setDashboard] = useState(null);
     const [recentActivities, setRecentActivities] = useState([]);
@@ -43,10 +41,6 @@ function TeacherDashboard() {
     });
     const [forcePasswordMessage, setForcePasswordMessage] = useState("");
     const [forcePasswordMessageType, setForcePasswordMessageType] = useState("");
-
-    const toggleSidebar = () => {
-        setIsSidebarOpen(!isSidebarOpen);
-    };
 
     useEffect(() => {
         if (!token) {
@@ -188,7 +182,6 @@ function TeacherDashboard() {
     if (loading) {
         return (
             <div className="teacher-portal-container">
-                <TeacherSidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
                 <div className="teacher-portal-content">
                     <div className="loading-state">Loading dashboard...</div>
                 </div>
@@ -199,7 +192,6 @@ function TeacherDashboard() {
     if (!dashboard) {
         return (
             <div className="teacher-portal-container">
-                <TeacherSidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
                 <div className="teacher-portal-content">
                     <div className="error-state">Failed to load dashboard</div>
                 </div>
@@ -265,17 +257,6 @@ function TeacherDashboard() {
                 </div>
             )}
 
-            {/* Hamburger Menu Button - Mobile Only */}
-            <button 
-                className="hamburger-btn" 
-                onClick={toggleSidebar}
-                aria-label="Toggle Sidebar"
-            >
-                <FaBars />
-            </button>
-
-            <TeacherSidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-            
             <div className="teacher-portal-content">
                 {/* Welcome Section - Beautiful */}
                 <div className="welcome-section enhanced">
