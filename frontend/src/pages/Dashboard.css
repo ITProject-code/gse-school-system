@@ -1,14 +1,10 @@
-/* ==================== DASHBOARD CONTAINER ==================== */
-.dashboard-container {
-    display: flex;
-    min-height: 100vh;
-    background: #081120;
-}
-
+/* ==================== DASHBOARD CONTENT ==================== */
 .dashboard-content {
     flex: 1;
     padding: 30px 35px;
     overflow-y: auto;
+    background: #081120;
+    min-height: 100vh;
 }
 
 /* ==================== HEADER ==================== */

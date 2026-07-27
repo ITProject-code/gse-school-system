@@ -1,15 +1,10 @@
-/* ==================== TEACHER PORTAL CONTAINER ==================== */
-.teacher-portal-container {
-    display: flex;
-    min-height: 100vh;
-    background: #081120;
-}
-
-/* ==================== MAIN CONTENT ==================== */
+/* ==================== TEACHER PORTAL CONTENT ==================== */
 .teacher-portal-content {
     flex: 1;
     padding: 30px 35px;
     overflow-y: auto;
+    background: #081120;
+    min-height: 100vh;
 }
 
 /* ==================== PAGE TITLE ==================== */
