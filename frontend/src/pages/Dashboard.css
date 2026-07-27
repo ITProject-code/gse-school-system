@@ -5,6 +5,7 @@
     overflow-y: auto;
     background: #081120;
     min-height: 100vh;
+    width: 100%;
 }
 
 /* ==================== HEADER ==================== */
