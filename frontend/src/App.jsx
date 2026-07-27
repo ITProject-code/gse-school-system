@@ -122,6 +122,11 @@ function App() {
   const isStudent = role === "STUDENT";
   const isTeacher = role === "TEACHER";
 
+  // Helper to check if user is authorized for admin routes
+  const isAdminAuthorized = isAuthenticated && isAdmin;
+  const isTeacherAuthorized = isAuthenticated && isTeacher;
+  const isStudentAuthorized = isAuthenticated && isStudent;
+
   return (
     <BrowserRouter>
       <PageTitleUpdater />
@@ -139,234 +144,234 @@ function App() {
 
         {/* ========== ADMIN ROUTES (WRAPPED WITH LAYOUT) ========== */}
         <Route path="/dashboard" element={
-          isAuthenticated && isAdmin ? <Layout><Dashboard /></Layout> : 
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isAdminAuthorized ? <Layout><Dashboard /></Layout> : 
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/students" element={
-          isAuthenticated && isAdmin ? <Layout><Students /></Layout> : 
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isAdminAuthorized ? <Layout><Students /></Layout> : 
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/teachers" element={
-          isAuthenticated && isAdmin ? <Layout><Teachers /></Layout> : 
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isAdminAuthorized ? <Layout><Teachers /></Layout> : 
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/teacher-admissions" element={
-          isAuthenticated && isAdmin ? <Layout><TeacherAdmissions /></Layout> :
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isAdminAuthorized ? <Layout><TeacherAdmissions /></Layout> :
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/admissions" element={
-          isAuthenticated && isAdmin ? <Layout><Admissions /></Layout> : 
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isAdminAuthorized ? <Layout><Admissions /></Layout> : 
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/attendance" element={
-          isAuthenticated && isAdmin ? <Layout><Attendance /></Layout> : 
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isAdminAuthorized ? <Layout><Attendance /></Layout> : 
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/subjects" element={
-          isAuthenticated && isAdmin ? <Layout><Subjects /></Layout> : 
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isAdminAuthorized ? <Layout><Subjects /></Layout> : 
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/teacher-subjects" element={
-          isAuthenticated && isAdmin ? <Layout><TeacherSubjectsAdmin /></Layout> :
-          isAuthenticated && isTeacher ? <Layout><TeacherSubjectsTeacher /></Layout> :
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
+          isAdminAuthorized ? <Layout><TeacherSubjectsAdmin /></Layout> :
+          isTeacherAuthorized ? <Layout><TeacherSubjectsTeacher /></Layout> :
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/student-subjects" element={
-          isAuthenticated && isAdmin ? <Layout><StudentSubjects /></Layout> : 
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isAdminAuthorized ? <Layout><StudentSubjects /></Layout> : 
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/class-teachers" element={
-          isAuthenticated && isAdmin ? <Layout><ClassTeachers /></Layout> :
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isAdminAuthorized ? <Layout><ClassTeachers /></Layout> :
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/assessments" element={
-          isAuthenticated && isAdmin ? <Layout><Assessments /></Layout> : 
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isAdminAuthorized ? <Layout><Assessments /></Layout> : 
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/assessment-templates" element={
-          isAuthenticated && isAdmin ? <Layout><AssessmentTemplates /></Layout> :
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isAdminAuthorized ? <Layout><AssessmentTemplates /></Layout> :
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/reports" element={
-          isAuthenticated && isAdmin ? <Layout><Reports /></Layout> : 
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isAdminAuthorized ? <Layout><Reports /></Layout> : 
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/payments" element={
-          isAuthenticated && isAdmin ? <Layout><Payments /></Layout> : 
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isAdminAuthorized ? <Layout><Payments /></Layout> : 
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/settings" element={
-          isAuthenticated && isAdmin ? <Layout><Settings /></Layout> : 
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isAdminAuthorized ? <Layout><Settings /></Layout> : 
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/announcements" element={
-          isAuthenticated && isAdmin ? <Layout><Announcements /></Layout> : 
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isAdminAuthorized ? <Layout><Announcements /></Layout> : 
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/notifications" element={
-          isAuthenticated && isAdmin ? <Layout><Notifications /></Layout> : 
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isAdminAuthorized ? <Layout><Notifications /></Layout> : 
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/assignments" element={
-          isAuthenticated && isAdmin ? <Layout><Assignments /></Layout> : 
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isAdminAuthorized ? <Layout><Assignments /></Layout> : 
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/users" element={
-          isAuthenticated && isAdmin ? <Layout><Users /></Layout> : 
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isAdminAuthorized ? <Layout><Users /></Layout> : 
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         
         <Route path="/contact-messages" element={
-          isAuthenticated && isAdmin ? <Layout><ContactMessages /></Layout> :
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isAdminAuthorized ? <Layout><ContactMessages /></Layout> :
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         
         <Route path="/messages" element={
-          isAuthenticated && isAdmin ? <Layout><Messages /></Layout> :
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isAdminAuthorized ? <Layout><Messages /></Layout> :
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
 
         {/* Teacher Messages Route */}
         <Route path="/teacher-messages" element={
-          isAuthenticated && (isTeacher || isAdmin) ? <Layout><TeacherMessages /></Layout> :
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized || isAdmin ? <Layout><TeacherMessages /></Layout> :
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/" />
         } />
 
         {/* Student Messages Route */}
         <Route path="/student-messages" element={
-          isAuthenticated && isStudent ? <StudentMessages /> :
-          isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isStudentAuthorized ? <StudentMessages /> :
+          isAdminAuthorized ? <Navigate to="/dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/student-login" />
         } />
         
         {/* ========== STUDENT ROUTES (NO LAYOUT - THEY HAVE THEIR OWN SIDEBAR) ========== */}
         <Route path="/student-dashboard" element={
-          isAuthenticated && isStudent ? <StudentDashboard /> :
-          isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isStudentAuthorized ? <StudentDashboard /> :
+          isAdminAuthorized ? <Navigate to="/dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/student-login" />
         } />
         <Route path="/student-assignments" element={
-          isAuthenticated && isStudent ? <StudentAssignments /> :
-          isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isStudentAuthorized ? <StudentAssignments /> :
+          isAdminAuthorized ? <Navigate to="/dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/student-login" />
         } />
         <Route path="/student-payments" element={
-          isAuthenticated && isStudent ? <StudentPayments /> :
-          isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
-          isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
+          isStudentAuthorized ? <StudentPayments /> :
+          isAdminAuthorized ? <Navigate to="/dashboard" /> :
+          isTeacherAuthorized ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/student-login" />
         } />
         
         {/* ========== TEACHER ROUTES (WRAPPED WITH LAYOUT) ========== */}
         <Route path="/teacher-dashboard" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherDashboard /></Layout> :
-          isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Layout><TeacherDashboard /></Layout> :
+          isAdminAuthorized ? <Navigate to="/dashboard" /> :
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         <Route path="/teacher-students" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherStudents /></Layout> :
-          isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Layout><TeacherStudents /></Layout> :
+          isAdminAuthorized ? <Navigate to="/dashboard" /> :
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         <Route path="/teacher-attendance" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherAttendance /></Layout> :
-          isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Layout><TeacherAttendance /></Layout> :
+          isAdminAuthorized ? <Navigate to="/dashboard" /> :
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         <Route path="/teacher-assessments" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherAssessments /></Layout> :
-          isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Layout><TeacherAssessments /></Layout> :
+          isAdminAuthorized ? <Navigate to="/dashboard" /> :
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         <Route path="/teacher-grades" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherGrades /></Layout> :
-          isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Layout><TeacherGrades /></Layout> :
+          isAdminAuthorized ? <Navigate to="/dashboard" /> :
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         <Route path="/teacher-profile" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherProfile /></Layout> :
-          isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Layout><TeacherProfile /></Layout> :
+          isAdminAuthorized ? <Navigate to="/dashboard" /> :
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         <Route path="/teacher-settings" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherSettings /></Layout> :
-          isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Layout><TeacherSettings /></Layout> :
+          isAdminAuthorized ? <Navigate to="/dashboard" /> :
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         <Route path="/teacher-report-cards" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherReportCards /></Layout> :
-          isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Layout><TeacherReportCards /></Layout> :
+          isAdminAuthorized ? <Navigate to="/dashboard" /> :
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         <Route path="/teacher-assignments" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherAssignments /></Layout> :
-          isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Layout><TeacherAssignments /></Layout> :
+          isAdminAuthorized ? <Navigate to="/dashboard" /> :
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         <Route path="/teacher-announcements" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherAnnouncements /></Layout> :
-          isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Layout><TeacherAnnouncements /></Layout> :
+          isAdminAuthorized ? <Navigate to="/dashboard" /> :
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         <Route path="/teacher-payments" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherPayments /></Layout> :
-          isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
-          isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
+          isTeacherAuthorized ? <Layout><TeacherPayments /></Layout> :
+          isAdminAuthorized ? <Navigate to="/dashboard" /> :
+          isStudentAuthorized ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         
