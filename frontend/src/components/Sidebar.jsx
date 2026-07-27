@@ -61,7 +61,6 @@ function Sidebar({ isOpen, toggleSidebar }) {
             <h2>🏫 GSEMS</h2>
             <p>German School ERP</p>
           </div>
-          {/* Close button - only visible on mobile */}
           <button className="sidebar-close-btn" onClick={toggleSidebar}>
             <FaTimes />
           </button>
@@ -77,115 +76,73 @@ function Sidebar({ isOpen, toggleSidebar }) {
 
         <div className="menu">
           <Link to="/dashboard" className={isActive("/dashboard")} onClick={handleLinkClick}>
-            <span className="menu-icon">📊</span>
-            Dashboard
+            <span className="menu-icon">📊</span> Dashboard
           </Link>
-
           <Link to="/students" className={isActive("/students")} onClick={handleLinkClick}>
-            <span className="menu-icon">👨‍🎓</span>
-            Students
+            <span className="menu-icon">👨‍🎓</span> Students
           </Link>
-
           <Link to="/teachers" className={isActive("/teachers")} onClick={handleLinkClick}>
-            <span className="menu-icon">👨‍🏫</span>
-            Teachers
+            <span className="menu-icon">👨‍🏫</span> Teachers
           </Link>
-
           <Link to="/teacher-admissions" className={isActive("/teacher-admissions")} onClick={handleLinkClick}>
-            <span className="menu-icon">📝</span>
-            Teacher Admissions
+            <span className="menu-icon">📝</span> Teacher Admissions
           </Link>
-
           <Link to="/admissions" className={isActive("/admissions")} onClick={handleLinkClick}>
-            <span className="menu-icon">📋</span>
-            Admissions
+            <span className="menu-icon">📋</span> Admissions
           </Link>
-
           <Link to="/attendance" className={isActive("/attendance")} onClick={handleLinkClick}>
-            <span className="menu-icon">✅</span>
-            Attendance
+            <span className="menu-icon">✅</span> Attendance
           </Link>
-
           <Link to="/subjects" className={isActive("/subjects")} onClick={handleLinkClick}>
-            <span className="menu-icon">📚</span>
-            Subjects
+            <span className="menu-icon">📚</span> Subjects
           </Link>
-
           <Link to="/teacher-subjects" className={isActive("/teacher-subjects")} onClick={handleLinkClick}>
-            <span className="menu-icon">👨‍🏫</span>
-            Teacher Subjects
+            <span className="menu-icon">👨‍🏫</span> Teacher Subjects
           </Link>
-
           <Link to="/student-subjects" className={isActive("/student-subjects")} onClick={handleLinkClick}>
-            <span className="menu-icon">👨‍🎓</span>
-            Student Subjects
+            <span className="menu-icon">👨‍🎓</span> Student Subjects
           </Link>
-
           <Link to="/class-teachers" className={isActive("/class-teachers")} onClick={handleLinkClick}>
-            <span className="menu-icon">👨‍🏫</span>
-            Class Teachers
+            <span className="menu-icon">👨‍🏫</span> Class Teachers
           </Link>
-
           <Link to="/assessments" className={isActive("/assessments")} onClick={handleLinkClick}>
-            <span className="menu-icon">📝</span>
-            Assessments
+            <span className="menu-icon">📝</span> Assessments
           </Link>
-
           <Link to="/assessment-templates" className={isActive("/assessment-templates")} onClick={handleLinkClick}>
-            <span className="menu-icon">📋</span>
-            Assessment Templates
+            <span className="menu-icon">📋</span> Assessment Templates
           </Link>
-
           <Link to="/assignments" className={isActive("/assignments")} onClick={handleLinkClick}>
-            <span className="menu-icon">📄</span>
-            Assignments
+            <span className="menu-icon">📄</span> Assignments
           </Link>
-
           <Link to="/reports" className={isActive("/reports")} onClick={handleLinkClick}>
-            <span className="menu-icon">📊</span>
-            Reports
+            <span className="menu-icon">📊</span> Reports
           </Link>
-
           <Link to="/announcements" className={isActive("/announcements")} onClick={handleLinkClick}>
-            <span className="menu-icon">📢</span>
-            Announcements
+            <span className="menu-icon">📢</span> Announcements
           </Link>
-
           <Link to="/notifications" className={isActive("/notifications")} onClick={handleLinkClick}>
-            <span className="menu-icon">🔔</span>
-            Notifications
+            <span className="menu-icon">🔔</span> Notifications
           </Link>
-
           <Link to="/payments" className={isActive("/payments")} onClick={handleLinkClick}>
-            <span className="menu-icon">💰</span>
-            Payments
+            <span className="menu-icon">💰</span> Payments
           </Link>
-
           <Link to="/users" className={isActive("/users")} onClick={handleLinkClick}>
-            <span className="menu-icon">👥</span>
-            Users
+            <span className="menu-icon">👥</span> Users
           </Link>
-
           <Link to="/messages" className={isActive("/messages")} onClick={handleLinkClick}>
-            <span className="menu-icon">📩</span>
-            Messages
+            <span className="menu-icon">📩</span> Messages
           </Link>
-
           <Link to="/contact-messages" className={isActive("/contact-messages")} onClick={handleLinkClick}>
-            <span className="menu-icon">✉️</span>
-            Contact Messages
+            <span className="menu-icon">✉️</span> Contact Messages
           </Link>
-
           <Link to="/settings" className={isActive("/settings")} onClick={handleLinkClick}>
-            <span className="menu-icon">⚙️</span>
-            Settings
+            <span className="menu-icon">⚙️</span> Settings
           </Link>
         </div>
 
         <div className="bottom">
           <button onClick={handleLogout} className="logout-btn">
-            <span className="menu-icon">🚪</span>
-            Logout
+            <span className="menu-icon">🚪</span> Logout
           </button>
           <p>German School of Excellence</p>
           <p>Adama, Ethiopia</p>

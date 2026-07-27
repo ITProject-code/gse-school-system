@@ -6,6 +6,7 @@
     display: flex;
     min-height: 100vh;
     background: #081120;
+    position: relative;
 }
 
 /* ===== HAMBURGER MENU BUTTON ===== */
@@ -46,7 +47,10 @@
     flex: 1;
     min-height: 100vh;
     background: #081120;
-    transition: margin-left 0.3s ease;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 /* ===== RESPONSIVE - MOBILE ===== */
@@ -62,11 +66,8 @@
         border-radius: 10px;
     }
 
-    /* Push content down to avoid hamburger overlap */
     .layout-content {
         padding-top: 20px;
-        padding-left: 10px;
-        padding-right: 10px;
     }
 }
 
@@ -81,21 +82,7 @@
 
     .layout-content {
         padding-top: 15px;
-        padding-left: 8px;
-        padding-right: 8px;
     }
-}
-
-/* ===== WHEN SIDEBAR IS OPEN ON MOBILE ===== */
-.layout-content{
-    flex:1;
-    min-height:100vh;
-    background:#081120;
-    overflow-x:hidden;
-}
-
-.layout-content.sidebar-open{
-    overflow:hidden;
 }
 
 /* ===== SCROLLBAR FOR LAYOUT ===== */

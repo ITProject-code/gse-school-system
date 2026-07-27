@@ -29,7 +29,7 @@ function Layout({ children }) {
         }
     };
 
-    // Determine which sidebar to use
+    // Determine which sidebar to use based on URL
     const SidebarComponent = isTeacherPage ? TeacherSidebar : Sidebar;
 
     return (
@@ -43,15 +43,13 @@ function Layout({ children }) {
                 <FaBars />
             </button>
 
-            {/* Sidebar */}
+            {/* Sidebar - ONLY ONE, determined by route */}
             <SidebarComponent isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
             {/* Main Content */}
-            <div
-    className={`layout-content ${isSidebarOpen ? "sidebar-open" : ""}`}
->
-    {children}
-</div>
+            <div className="layout-content">
+                {children}
+            </div>
         </div>
     );
 }

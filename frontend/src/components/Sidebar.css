@@ -11,10 +11,8 @@
   display: flex;
   flex-direction: column;
   border-right: 1px solid rgba(255, 255, 255, 0.08);
-  position: sticky;
-  top: 0;
-  overflow-y: auto;
   flex-shrink: 0;
+  overflow-y: auto;
   transition: transform 0.3s ease;
   z-index: 1000;
 }
@@ -24,6 +22,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .sidebar-close-btn {
@@ -49,6 +48,7 @@
   margin-bottom: 25px;
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex: 1;
 }
 
 .logo h2 {
@@ -197,24 +197,6 @@
   color: #ef4444;
 }
 
-/* ===== SCROLLBAR ===== */
-.sidebar::-webkit-scrollbar {
-  width: 4px;
-}
-
-.sidebar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.sidebar::-webkit-scrollbar-thumb {
-  background: #2d3d63;
-  border-radius: 10px;
-}
-
-.sidebar::-webkit-scrollbar-thumb:hover {
-  background: #3d4d73;
-}
-
 /* ===== OVERLAY ===== */
 .sidebar-overlay {
   display: none;
@@ -254,21 +236,20 @@
 }
 
 @media (max-width: 768px) {
-  .sidebar{
-position:fixed;
-top:0;
-left:0;
-height:100vh;
-width:280px;
-
-transform:translateX(-100%);
-
-transition:transform .3s ease;
-
-z-index:1001;
-
-overflow-y:auto;
-}
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 280px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1001;
+    overflow-y: auto;
+    padding: 20px 16px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 4px 0 30px rgba(0, 0, 0, 0.5);
+  }
 
   .sidebar.open {
     transform: translateX(0);
@@ -280,39 +261,25 @@ overflow-y:auto;
     justify-content: center;
   }
 
-  .sidebar-overlay{
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
 
-position:fixed;
+  .sidebar-overlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
 
-top:0;
-
-left:0;
-
-width:100%;
-
-height:100%;
-
-background:rgba(0,0,0,.55);
-
-backdrop-filter:blur(2px);
-
-z-index:1000;
-
-opacity:0;
-
-visibility:hidden;
-
-transition:.3s;
-
-}
-
-  .sidebar-overlay.show{
-
-opacity:1;
-
-visibility:visible;
-
-}
   .logo h2 {
     font-size: 20px;
   }

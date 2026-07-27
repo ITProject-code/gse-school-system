@@ -28,7 +28,6 @@ function TeacherSidebar({ isOpen, toggleSidebar }) {
 
   return (
     <>
-      {/* Overlay - closes sidebar when clicked */}
       {isOpen && (
         <div className="teacher-sidebar-overlay show" onClick={toggleSidebar}></div>
       )}
@@ -39,7 +38,6 @@ function TeacherSidebar({ isOpen, toggleSidebar }) {
             <h2>👨‍🏫 GSEMS</h2>
             <p>Teacher Portal</p>
           </div>
-          {/* Close button - only visible on mobile */}
           <button className="teacher-sidebar-close-btn" onClick={toggleSidebar}>
             <FaTimes />
           </button>
@@ -55,75 +53,49 @@ function TeacherSidebar({ isOpen, toggleSidebar }) {
 
         <div className="teacher-menu">
           <Link to="/teacher-dashboard" className={isActive("/teacher-dashboard")} onClick={handleLinkClick}>
-            <span className="menu-icon">📊</span>
-            Dashboard
+            <span className="menu-icon">📊</span> Dashboard
           </Link>
-
           <Link to="/teacher-subjects" className={isActive("/teacher-subjects")} onClick={handleLinkClick}>
-            <span className="menu-icon">📚</span>
-            My Subjects
+            <span className="menu-icon">📚</span> My Subjects
           </Link>
-
           <Link to="/teacher-students" className={isActive("/teacher-students")} onClick={handleLinkClick}>
-            <span className="menu-icon">👨‍🎓</span>
-            My Students
+            <span className="menu-icon">👨‍🎓</span> My Students
           </Link>
-
           <Link to="/teacher-attendance" className={isActive("/teacher-attendance")} onClick={handleLinkClick}>
-            <span className="menu-icon">✅</span>
-            Attendance
+            <span className="menu-icon">✅</span> Attendance
           </Link>
-
           <Link to="/teacher-assessments" className={isActive("/teacher-assessments")} onClick={handleLinkClick}>
-            <span className="menu-icon">📝</span>
-            Assessments
+            <span className="menu-icon">📝</span> Assessments
           </Link>
-
           <Link to="/teacher-grades" className={isActive("/teacher-grades")} onClick={handleLinkClick}>
-            <span className="menu-icon">⭐</span>
-            Grades
+            <span className="menu-icon">⭐</span> Grades
           </Link>
-
           <Link to="/teacher-assignments" className={isActive("/teacher-assignments")} onClick={handleLinkClick}>
-            <span className="menu-icon">📄</span>
-            Assignments
+            <span className="menu-icon">📄</span> Assignments
           </Link>
-
           <Link to="/teacher-report-cards" className={isActive("/teacher-report-cards")} onClick={handleLinkClick}>
-            <span className="menu-icon">📊</span>
-            Report Cards
+            <span className="menu-icon">📊</span> Report Cards
           </Link>
-
           <Link to="/teacher-announcements" className={isActive("/teacher-announcements")} onClick={handleLinkClick}>
-            <span className="menu-icon">📢</span>
-            Announcements
+            <span className="menu-icon">📢</span> Announcements
           </Link>
-
           <Link to="/teacher-payments" className={isActive("/teacher-payments")} onClick={handleLinkClick}>
-            <span className="menu-icon">💰</span>
-            Payments
+            <span className="menu-icon">💰</span> Payments
           </Link>
-
           <Link to="/teacher-messages" className={isActive("/teacher-messages")} onClick={handleLinkClick}>
-            <span className="menu-icon">📩</span>
-            Messages
+            <span className="menu-icon">📩</span> Messages
           </Link>
-
           <Link to="/teacher-profile" className={isActive("/teacher-profile")} onClick={handleLinkClick}>
-            <span className="menu-icon">👤</span>
-            Profile
+            <span className="menu-icon">👤</span> Profile
           </Link>
-
           <Link to="/teacher-settings" className={isActive("/teacher-settings")} onClick={handleLinkClick}>
-            <span className="menu-icon">⚙️</span>
-            Settings
+            <span className="menu-icon">⚙️</span> Settings
           </Link>
         </div>
 
         <div className="teacher-sidebar-bottom">
           <button onClick={handleLogout} className="teacher-logout-btn">
-            <span className="menu-icon">🚪</span>
-            Logout
+            <span className="menu-icon">🚪</span> Logout
           </button>
         </div>
       </div>
