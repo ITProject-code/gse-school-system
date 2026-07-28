@@ -8,6 +8,8 @@ import "./Layout.css";
 function Layout({ children }) {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const location = useLocation();
+    
+    // ✅ FIX: Get role from localStorage
     const role = localStorage.getItem("role");
 
     // Close sidebar when route changes (mobile)
@@ -36,7 +38,8 @@ function Layout({ children }) {
         setIsSidebarOpen(false);
     };
 
-    // ✅ FIX: Determine sidebar based on ROLE, not route
+    // ✅ FIX: ALWAYS use Admin sidebar for ADMIN role
+    // ✅ FIX: ALWAYS use Teacher sidebar for TEACHER role
     const isTeacher = role === "TEACHER";
     const SidebarComponent = isTeacher ? TeacherSidebar : Sidebar;
 
@@ -51,7 +54,7 @@ function Layout({ children }) {
                 <FaBars />
             </button>
 
-            {/* Sidebar - ONLY ONE, determined by ROLE */}
+            {/* ✅ FIX: ONLY ONE sidebar based on ROLE */}
             <SidebarComponent 
                 isOpen={isSidebarOpen} 
                 toggleSidebar={toggleSidebar}

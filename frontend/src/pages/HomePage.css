@@ -91,66 +91,49 @@ html {
     }
 }
 
-/* ===== HEADER - ✅ FIXED: STAYS AT TOP ===== */
+/* ========================================
+   HEADER - FIXED AT TOP
+   ======================================== */
+
 .home-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
     height: var(--header-h);
     display: flex;
     align-items: center;
-    background: rgba(11, 19, 43, 0.96);
+    background: rgba(11, 19, 43, 0.96) !important;
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    /* ✅ FIX: Prevent header from scrolling */
-    transition: none;
+    width: 100% !important;
 }
 
 .home-header .container-full {
     height: 100%;
 }
 
+/* ===== HEADER INNER - LOGO LEFT, NAV CENTER, LOGIN RIGHT ===== */
 .header-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 24px;
     width: 100%;
     height: 100%;
-    padding: 0 calc(var(--edge-x) - 10px) 0 var(--edge-x);
+    padding: 0 50px;
+    gap: 20px;
 }
 
-@media (max-width: 768px) {
-    .header-inner {
-        padding: 12px var(--edge-x-tablet);
-        height: auto;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-}
-
-@media (max-width: 480px) {
-    .header-inner {
-        padding: 10px var(--edge-x-mobile);
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-}
-
-/* ===== LOGO - BIGGER ===== */
+/* ===== LOGO - LEFT SIDE ===== */
 .logo {
     display: flex;
     align-items: center;
     gap: 14px;
     cursor: pointer;
-    text-decoration: none;
     flex-shrink: 0;
+    text-decoration: none;
 }
 
 .logo-icon {
@@ -175,23 +158,12 @@ html {
     font-weight: 500;
 }
 
-@media (max-width: 480px) {
-    .logo-icon {
-        font-size: 28px;
-    }
-    .logo-text h1 {
-        font-size: 22px;
-    }
-    .logo-text span {
-        font-size: 11px;
-    }
-}
-
-/* ===== NAV LINKS - BIGGER ===== */
+/* ===== NAV LINKS - CENTER ===== */
 .main-nav {
     display: flex;
     gap: 40px;
-    flex-wrap: wrap;
+    flex-shrink: 0;
+    align-items: center;
 }
 
 .main-nav a {
@@ -201,6 +173,7 @@ html {
     font-weight: 600;
     transition: color 0.3s;
     position: relative;
+    white-space: nowrap;
 }
 
 .main-nav a:hover {
@@ -222,35 +195,13 @@ html {
     width: 100%;
 }
 
-@media (max-width: 768px) {
-    .main-nav {
-        gap: 16px;
-        justify-content: center;
-        width: 100%;
-        order: 3;
-    }
-    .main-nav a {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    .main-nav {
-        gap: 10px;
-    }
-    .main-nav a {
-        font-size: 12px;
-    }
-}
-
-/* ===== LOGIN BUTTON - BIGGER ===== */
+/* ===== LOGIN BUTTON - RIGHT SIDE ===== */
 .header-actions {
     display: flex;
     gap: 12px;
     align-items: center;
-    margin-left: 8px;
-    position: relative;
     flex-shrink: 0;
+    position: relative;
 }
 
 .btn-login-dropdown {
@@ -266,7 +217,7 @@ html {
     font-size: 16px;
     line-height: 1;
     cursor: pointer;
-    transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), filter 0.25s var(--ease);
+    transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
 }
 
 .btn-login-dropdown:hover {
@@ -283,31 +234,7 @@ html {
     transform: rotate(180deg);
 }
 
-@media (max-width: 768px) {
-    .header-actions {
-        margin-left: 0;
-        width: 100%;
-        justify-content: center;
-        order: 2;
-    }
-    .btn-login-dropdown {
-        padding: 10px 20px;
-        font-size: 14px;
-        width: auto;
-        min-width: 160px;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .btn-login-dropdown {
-        padding: 8px 16px;
-        font-size: 13px;
-        min-width: 140px;
-    }
-}
-
-/* ===== DROPDOWN - ✅ FIXED: POSITION ON MOBILE ===== */
+/* ===== DROPDOWN MENU ===== */
 .login-dropdown {
     position: relative;
     display: inline-block;
@@ -316,12 +243,11 @@ html {
 .dropdown-menu {
     position: absolute;
     top: calc(100% + 12px);
-    left: 0;
     right: 0;
     background: var(--bg-card);
     border-radius: var(--radius-md);
     padding: 8px;
-    min-width: 240px;
+    min-width: 220px;
     border: 1px solid rgba(255, 255, 255, 0.06);
     box-shadow: var(--shadow-lg);
     animation: slideDown 0.2s var(--ease);
@@ -365,33 +291,10 @@ html {
     color: #60a5fa;
 }
 
-/* ✅ FIX: Mobile dropdown - centered below button */
-@media (max-width: 768px) {
-    .dropdown-menu {
-        left: 50%;
-        transform: translateX(-50%);
-        min-width: 220px;
-        top: calc(100% + 8px);
-    }
-    .dropdown-item {
-        font-size: 14px;
-        padding: 12px 16px;
-        justify-content: center;
-    }
-}
+/* ========================================
+   HERO SECTION
+   ======================================== */
 
-@media (max-width: 480px) {
-    .dropdown-menu {
-        min-width: 180px;
-        padding: 6px;
-    }
-    .dropdown-item {
-        font-size: 13px;
-        padding: 10px 14px;
-    }
-}
-
-/* ===== HERO SECTION ===== */
 .hero-section {
     padding: calc(var(--header-h) + 64px) 0 80px;
     min-height: 100vh;
@@ -434,26 +337,6 @@ html {
     z-index: 1;
     width: 100%;
     padding: 0 50px;
-}
-
-@media (max-width: 1024px) {
-    .hero-content {
-        padding: 0 50px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-content {
-        padding: 0 25px;
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-content {
-        padding: 0 15px;
-    }
 }
 
 .hero-text .hero-badge {
@@ -510,7 +393,7 @@ html {
     font-weight: 700;
     font-size: 16px;
     cursor: pointer;
-    transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), filter 0.25s var(--ease);
+    transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
 }
 
 .btn-primary:hover {
@@ -618,7 +501,10 @@ html {
     color: #94a3b8;
 }
 
-/* ===== SECTION HEADER ===== */
+/* ========================================
+   SECTION HEADER
+   ======================================== */
+
 .section-header {
     text-align: center;
     margin-bottom: 50px;
@@ -650,22 +536,10 @@ html {
     margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-    .section-header h2 {
-        font-size: 28px;
-    }
-    .section-header p {
-        font-size: 15px;
-    }
-}
+/* ========================================
+   ABOUT SECTION
+   ======================================== */
 
-@media (max-width: 480px) {
-    .section-header h2 {
-        font-size: 22px;
-    }
-}
-
-/* ===== ABOUT SECTION ===== */
 .about-section {
     padding: 80px 0;
     background: #0b132b;
@@ -674,18 +548,6 @@ html {
 
 .about-section .container-full {
     padding: 0 50px;
-}
-
-@media (max-width: 768px) {
-    .about-section .container-full {
-        padding: 0 25px;
-    }
-}
-
-@media (max-width: 480px) {
-    .about-section .container-full {
-        padding: 0 15px;
-    }
 }
 
 .about-grid {
@@ -738,21 +600,10 @@ html {
     margin: 0;
 }
 
-@media (max-width: 768px) {
-    .about-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-}
+/* ========================================
+   FEATURES SECTION
+   ======================================== */
 
-@media (max-width: 480px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-}
-
-/* ===== FEATURES SECTION ===== */
 .features-section {
     padding: 80px 0;
     background: #081120;
@@ -761,18 +612,6 @@ html {
 
 .features-section .container-full {
     padding: 0 50px;
-}
-
-@media (max-width: 768px) {
-    .features-section .container-full {
-        padding: 0 25px;
-    }
-}
-
-@media (max-width: 480px) {
-    .features-section .container-full {
-        padding: 0 15px;
-    }
 }
 
 .features-grid {
@@ -821,21 +660,10 @@ html {
     margin: 0;
 }
 
-@media (max-width: 768px) {
-    .features-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-    }
-}
+/* ========================================
+   STATS SECTION
+   ======================================== */
 
-@media (max-width: 480px) {
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-}
-
-/* ===== STATS SECTION ===== */
 .stats-section {
     padding: 60px 0;
     background: linear-gradient(135deg, #1c2541, #0b132b);
@@ -844,18 +672,6 @@ html {
 
 .stats-section .container-full {
     padding: 0 50px;
-}
-
-@media (max-width: 768px) {
-    .stats-section .container-full {
-        padding: 0 25px;
-    }
-}
-
-@media (max-width: 480px) {
-    .stats-section .container-full {
-        padding: 0 15px;
-    }
 }
 
 .stats-grid {
@@ -879,30 +695,10 @@ html {
     margin-top: 4px;
 }
 
-@media (max-width: 768px) {
-    .stats-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-    .stat-item .stat-number {
-        font-size: 36px;
-    }
-}
+/* ========================================
+   CONTACT SECTION
+   ======================================== */
 
-@media (max-width: 480px) {
-    .stats-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-    }
-    .stat-item .stat-number {
-        font-size: 28px;
-    }
-    .stat-item .stat-label {
-        font-size: 13px;
-    }
-}
-
-/* ===== CONTACT SECTION ===== */
 .contact-section {
     padding: 80px 0;
     background: #0b132b;
@@ -911,18 +707,6 @@ html {
 
 .contact-section .container-full {
     padding: 0 50px;
-}
-
-@media (max-width: 768px) {
-    .contact-section .container-full {
-        padding: 0 25px;
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-section .container-full {
-        padding: 0 15px;
-    }
 }
 
 .contact-status {
@@ -1030,23 +814,10 @@ html {
     resize: vertical;
 }
 
-@media (max-width: 768px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    .contact-form .form-row {
-        grid-template-columns: 1fr;
-    }
-}
+/* ========================================
+   FOOTER
+   ======================================== */
 
-@media (max-width: 480px) {
-    .contact-grid {
-        gap: 24px;
-    }
-}
-
-/* ===== FOOTER ===== */
 .home-footer {
     background: #0b132b;
     padding: 50px 0 20px;
@@ -1056,18 +827,6 @@ html {
 
 .home-footer .container-full {
     padding: 0 50px;
-}
-
-@media (max-width: 768px) {
-    .home-footer .container-full {
-        padding: 0 25px;
-    }
-}
-
-@media (max-width: 480px) {
-    .home-footer .container-full {
-        padding: 0 15px;
-    }
 }
 
 .footer-content {
@@ -1128,41 +887,123 @@ html {
     margin-left: 8px;
 }
 
-@media (max-width: 768px) {
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
-        text-align: center;
-    }
-    .footer-brand p {
-        max-width: 100%;
-    }
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-    }
-    .footer-contact {
-        display: block;
-        margin-left: 0;
-        margin-top: 4px;
-    }
-}
+/* ============================================================
+   RESPONSIVE - MOBILE
+   ============================================================ */
 
-@media (max-width: 480px) {
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-}
-
-/* ===== RESPONSIVE - HERO SPECIFIC ===== */
 @media (max-width: 1024px) {
     .hero-text h1 {
         font-size: 40px;
     }
+    
+    .header-inner {
+        padding: 0 25px;
+    }
+    
+    .main-nav {
+        gap: 20px;
+    }
+    
+    .main-nav a {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 768px) {
+    /* ===== HEADER ===== */
+    .header-inner {
+        padding: 10px 20px;
+        flex-wrap: wrap;
+        gap: 8px;
+        height: auto;
+        min-height: 70px;
+    }
+
+    /* Logo - Left */
+    .logo {
+        order: 1;
+        flex: 0 0 auto;
+    }
+    
+    .logo-icon {
+        font-size: 28px;
+    }
+    
+    .logo-text h1 {
+        font-size: 22px;
+    }
+    
+    .logo-text span {
+        font-size: 11px;
+    }
+
+    /* Nav - Center, doesn't move */
+    .main-nav {
+        order: 2;
+        flex: 1;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 4px 0;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    
+    .main-nav::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .main-nav a {
+        font-size: 13px;
+        white-space: nowrap;
+        padding: 2px 6px;
+    }
+
+    /* Login - Right */
+    .header-actions {
+        order: 3;
+        flex: 0 0 auto;
+        margin-left: auto;
+    }
+    
+    .btn-login-dropdown {
+        padding: 8px 16px;
+        font-size: 13px;
+        min-width: auto;
+        gap: 6px;
+    }
+    
+    .dropdown-arrow {
+        font-size: 11px;
+    }
+
+    /* Dropdown - stays under button */
+    .dropdown-menu {
+        right: 0;
+        left: auto;
+        min-width: 200px;
+        top: calc(100% + 8px);
+        transform: none;
+    }
+    
+    .dropdown-item {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+
+    /* ===== HERO ===== */
     .hero-section {
         padding: 120px 0 60px;
         min-height: auto;
@@ -1198,9 +1039,123 @@ html {
     .hero-image-icon {
         font-size: 52px;
     }
+
+    /* ===== SECTIONS ===== */
+    .section-header h2 {
+        font-size: 28px;
+    }
+    
+    .section-header p {
+        font-size: 15px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    
+    .stat-item .stat-number {
+        font-size: 36px;
+    }
+
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 24px;
+    }
+    
+    .footer-brand p {
+        max-width: 100%;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-contact {
+        display: block;
+        margin-left: 0;
+        margin-top: 4px;
+    }
+
+    .about-section .container-full,
+    .features-section .container-full,
+    .stats-section .container-full,
+    .contact-section .container-full,
+    .home-footer .container-full {
+        padding: 0 25px;
+    }
 }
 
 @media (max-width: 480px) {
+    /* ===== HEADER ===== */
+    .header-inner {
+        padding: 8px 12px;
+        min-height: 60px;
+        gap: 4px;
+    }
+    
+    .logo-icon {
+        font-size: 22px;
+    }
+    
+    .logo-text h1 {
+        font-size: 18px;
+    }
+    
+    .logo-text span {
+        font-size: 9px;
+    }
+    
+    .logo {
+        gap: 8px;
+    }
+    
+    .main-nav {
+        gap: 8px;
+        flex: 0 1 auto;
+    }
+    
+    .main-nav a {
+        font-size: 11px;
+        padding: 2px 4px;
+    }
+    
+    .btn-login-dropdown {
+        padding: 6px 12px;
+        font-size: 11px;
+        gap: 4px;
+    }
+    
+    .dropdown-menu {
+        min-width: 160px;
+        padding: 4px;
+        right: 0;
+        left: auto;
+    }
+    
+    .dropdown-item {
+        font-size: 12px;
+        padding: 8px 12px;
+        gap: 10px;
+    }
+
+    /* ===== HERO ===== */
     .hero-section {
         padding: 110px 0 40px;
     }
@@ -1258,5 +1213,45 @@ html {
     .hero-image-stats span {
         font-size: 11px;
         padding: 4px 12px;
+    }
+
+    /* ===== SECTIONS ===== */
+    .section-header h2 {
+        font-size: 22px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+    
+    .stat-item .stat-number {
+        font-size: 28px;
+    }
+    
+    .stat-item .stat-label {
+        font-size: 13px;
+    }
+
+    .contact-grid {
+        gap: 24px;
+    }
+
+    .about-section .container-full,
+    .features-section .container-full,
+    .stats-section .container-full,
+    .contact-section .container-full,
+    .home-footer .container-full {
+        padding: 0 15px;
     }
 }
