@@ -1,31 +1,8 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import {
-  FaTachometerAlt,
-  FaUserGraduate,
-  FaChalkboardTeacher,
-  FaClipboardList,
-  FaCalendarCheck,
-  FaBook,
-  FaMoneyBillWave,
-  FaChartBar,
-  FaCog,
-  FaUserTie,
-  FaUsers,
-  FaClipboardCheck,
-  FaBullhorn,
-  FaBell,
-  FaChalkboard,
-  FaUserPlus,
-  FaFileAlt,
-  FaTasks,
-  FaEnvelope, 
-  FaPaperPlane,
-  FaSignOutAlt,
-  FaTimes,
-} from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 import "./Sidebar.css";
 
-function Sidebar({ isOpen, toggleSidebar }) {
+function Sidebar({ isOpen, toggleSidebar, closeSidebar }) {
   const navigate = useNavigate();
   const location = useLocation();
   const user = JSON.parse(localStorage.getItem("user") || "{}");
@@ -35,12 +12,19 @@ function Sidebar({ isOpen, toggleSidebar }) {
     localStorage.removeItem("user");
     localStorage.removeItem("role");
     navigate("/login");
-    if (toggleSidebar) toggleSidebar();
+    // ✅ FIX: Close sidebar on logout
+    if (closeSidebar) closeSidebar();
   };
 
+  // ✅ FIX: Properly close sidebar when link is clicked
   const handleLinkClick = () => {
-    if (toggleSidebar && window.innerWidth <= 768) {
-      toggleSidebar();
+    // ALWAYS close sidebar on mobile when a link is clicked
+    if (window.innerWidth <= 768) {
+      if (closeSidebar) {
+        closeSidebar();
+      } else if (toggleSidebar) {
+        toggleSidebar();
+      }
     }
   };
 
@@ -52,7 +36,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
     <>
       {/* Overlay - closes sidebar when clicked */}
       {isOpen && (
-        <div className="sidebar-overlay show" onClick={toggleSidebar}></div>
+        <div className="sidebar-overlay show" onClick={handleLinkClick}></div>
       )}
       
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
@@ -61,7 +45,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
             <h2>🏫 GSEMS</h2>
             <p>German School ERP</p>
           </div>
-          <button className="sidebar-close-btn" onClick={toggleSidebar}>
+          <button className="sidebar-close-btn" onClick={handleLinkClick}>
             <FaTimes />
           </button>
         </div>

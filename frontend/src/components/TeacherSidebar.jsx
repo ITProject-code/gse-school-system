@@ -2,7 +2,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import "./TeacherSidebar.css";
 
-function TeacherSidebar({ isOpen, toggleSidebar }) {
+function TeacherSidebar({ isOpen, toggleSidebar, closeSidebar }) {
   const navigate = useNavigate();
   const location = useLocation();
   const teacher = JSON.parse(localStorage.getItem("teacher") || "{}");
@@ -13,12 +13,19 @@ function TeacherSidebar({ isOpen, toggleSidebar }) {
     localStorage.removeItem("teacher");
     localStorage.removeItem("role");
     navigate("/teacher-login");
-    if (toggleSidebar) toggleSidebar();
+    // ✅ FIX: Close sidebar on logout
+    if (closeSidebar) closeSidebar();
   };
 
+  // ✅ FIX: Properly close sidebar when link is clicked
   const handleLinkClick = () => {
-    if (toggleSidebar && window.innerWidth <= 768) {
-      toggleSidebar();
+    // ALWAYS close sidebar on mobile when a link is clicked
+    if (window.innerWidth <= 768) {
+      if (closeSidebar) {
+        closeSidebar();
+      } else if (toggleSidebar) {
+        toggleSidebar();
+      }
     }
   };
 
@@ -29,7 +36,7 @@ function TeacherSidebar({ isOpen, toggleSidebar }) {
   return (
     <>
       {isOpen && (
-        <div className="teacher-sidebar-overlay show" onClick={toggleSidebar}></div>
+        <div className="teacher-sidebar-overlay show" onClick={handleLinkClick}></div>
       )}
       
       <div className={`teacher-sidebar ${isOpen ? "open" : ""}`}>
@@ -38,7 +45,7 @@ function TeacherSidebar({ isOpen, toggleSidebar }) {
             <h2>👨‍🏫 GSEMS</h2>
             <p>Teacher Portal</p>
           </div>
-          <button className="teacher-sidebar-close-btn" onClick={toggleSidebar}>
+          <button className="teacher-sidebar-close-btn" onClick={handleLinkClick}>
             <FaTimes />
           </button>
         </div>

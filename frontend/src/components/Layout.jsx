@@ -8,9 +8,7 @@ import "./Layout.css";
 function Layout({ children }) {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const location = useLocation();
-
-    // Check if we're on a teacher page
-    const isTeacherPage = location.pathname.startsWith('/teacher');
+    const role = localStorage.getItem("role");
 
     // Close sidebar when route changes (mobile)
     useEffect(() => {
@@ -19,18 +17,28 @@ function Layout({ children }) {
         }
     }, [location.pathname]);
 
+    // Close sidebar when window resizes to desktop
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > 768) {
+                setIsSidebarOpen(false);
+            }
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
     const closeSidebar = () => {
-        if (window.innerWidth <= 768) {
-            setIsSidebarOpen(false);
-        }
+        setIsSidebarOpen(false);
     };
 
-    // Determine which sidebar to use based on URL
-    const SidebarComponent = isTeacherPage ? TeacherSidebar : Sidebar;
+    // ✅ FIX: Determine sidebar based on ROLE, not route
+    const isTeacher = role === "TEACHER";
+    const SidebarComponent = isTeacher ? TeacherSidebar : Sidebar;
 
     return (
         <div className="layout-container">
@@ -43,13 +51,17 @@ function Layout({ children }) {
                 <FaBars />
             </button>
 
-            {/* Sidebar - ONLY ONE, determined by route */}
-            <SidebarComponent isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+            {/* Sidebar - ONLY ONE, determined by ROLE */}
+            <SidebarComponent 
+                isOpen={isSidebarOpen} 
+                toggleSidebar={toggleSidebar}
+                closeSidebar={closeSidebar}
+            />
 
             {/* Main Content */}
-            <div className="layout-content">
+            <main className="layout-content">
                 {children}
-            </div>
+            </main>
         </div>
     );
 }
