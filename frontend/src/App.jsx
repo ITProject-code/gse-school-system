@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import Layout from "./components/Layout";
 
 // Admin Pages
 import Login from "./pages/Login";
@@ -137,138 +136,138 @@ function App() {
         <Route path="/student-forgot-password" element={<ForgotPassword />} />
         <Route path="/teacher-forgot-password" element={<ForgotPassword />} />
 
-        {/* ========== ADMIN ROUTES ========== */}
+        {/* ========== ADMIN ROUTES - NO LAYOUT ========== */}
         <Route path="/dashboard" element={
-          isAuthenticated && isAdmin ? <Layout><Dashboard /></Layout> : 
+          isAuthenticated && isAdmin ? <Dashboard /> : 
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/students" element={
-          isAuthenticated && isAdmin ? <Layout><Students /></Layout> : 
+          isAuthenticated && isAdmin ? <Students /> : 
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/teachers" element={
-          isAuthenticated && isAdmin ? <Layout><Teachers /></Layout> : 
+          isAuthenticated && isAdmin ? <Teachers /> : 
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/teacher-admissions" element={
-          isAuthenticated && isAdmin ? <Layout><TeacherAdmissions /></Layout> :
+          isAuthenticated && isAdmin ? <TeacherAdmissions /> :
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/admissions" element={
-          isAuthenticated && isAdmin ? <Layout><Admissions /></Layout> : 
+          isAuthenticated && isAdmin ? <Admissions /> : 
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/attendance" element={
-          isAuthenticated && isAdmin ? <Layout><Attendance /></Layout> : 
+          isAuthenticated && isAdmin ? <Attendance /> : 
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/subjects" element={
-          isAuthenticated && isAdmin ? <Layout><Subjects /></Layout> : 
+          isAuthenticated && isAdmin ? <Subjects /> : 
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/teacher-subjects" element={
-          isAuthenticated && isAdmin ? <Layout><TeacherSubjectsAdmin /></Layout> :
-          isAuthenticated && isTeacher ? <Layout><TeacherSubjectsTeacher /></Layout> :
+          isAuthenticated && isAdmin ? <TeacherSubjectsAdmin /> :
+          isAuthenticated && isTeacher ? <TeacherSubjectsTeacher /> :
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/student-subjects" element={
-          isAuthenticated && isAdmin ? <Layout><StudentSubjects /></Layout> : 
+          isAuthenticated && isAdmin ? <StudentSubjects /> : 
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/class-teachers" element={
-          isAuthenticated && isAdmin ? <Layout><ClassTeachers /></Layout> :
+          isAuthenticated && isAdmin ? <ClassTeachers /> :
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/assessments" element={
-          isAuthenticated && isAdmin ? <Layout><Assessments /></Layout> : 
+          isAuthenticated && isAdmin ? <Assessments /> : 
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/assessment-templates" element={
-          isAuthenticated && isAdmin ? <Layout><AssessmentTemplates /></Layout> :
+          isAuthenticated && isAdmin ? <AssessmentTemplates /> :
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/reports" element={
-          isAuthenticated && isAdmin ? <Layout><Reports /></Layout> : 
+          isAuthenticated && isAdmin ? <Reports /> : 
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/payments" element={
-          isAuthenticated && isAdmin ? <Layout><Payments /></Layout> : 
+          isAuthenticated && isAdmin ? <Payments /> : 
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/settings" element={
-          isAuthenticated && isAdmin ? <Layout><Settings /></Layout> : 
+          isAuthenticated && isAdmin ? <Settings /> : 
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/announcements" element={
-          isAuthenticated && isAdmin ? <Layout><Announcements /></Layout> : 
+          isAuthenticated && isAdmin ? <Announcements /> : 
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/notifications" element={
-          isAuthenticated && isAdmin ? <Layout><Notifications /></Layout> : 
+          isAuthenticated && isAdmin ? <Notifications /> : 
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/assignments" element={
-          isAuthenticated && isAdmin ? <Layout><Assignments /></Layout> : 
+          isAuthenticated && isAdmin ? <Assignments /> : 
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         <Route path="/users" element={
-          isAuthenticated && isAdmin ? <Layout><Users /></Layout> : 
+          isAuthenticated && isAdmin ? <Users /> : 
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         
         <Route path="/contact-messages" element={
-          isAuthenticated && isAdmin ? <Layout><ContactMessages /></Layout> :
+          isAuthenticated && isAdmin ? <ContactMessages /> :
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
         
         <Route path="/messages" element={
-          isAuthenticated && isAdmin ? <Layout><Messages /></Layout> :
+          isAuthenticated && isAdmin ? <Messages /> :
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           isAuthenticated && isTeacher ? <Navigate to="/teacher-dashboard" /> :
           <Navigate to="/" />
         } />
 
         <Route path="/teacher-messages" element={
-          isAuthenticated && (isTeacher || isAdmin) ? <Layout><TeacherMessages /></Layout> :
+          isAuthenticated && (isTeacher || isAdmin) ? <TeacherMessages /> :
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/" />
         } />
@@ -280,7 +279,7 @@ function App() {
           <Navigate to="/student-login" />
         } />
         
-        {/* ========== STUDENT ROUTES ========== */}
+        {/* ========== STUDENT ROUTES - NO LAYOUT ========== */}
         <Route path="/student-dashboard" element={
           isAuthenticated && isStudent ? <StudentDashboard /> :
           isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
@@ -300,69 +299,69 @@ function App() {
           <Navigate to="/student-login" />
         } />
         
-        {/* ========== TEACHER ROUTES ========== */}
+        {/* ========== TEACHER ROUTES - NO LAYOUT ========== */}
         <Route path="/teacher-dashboard" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherDashboard /></Layout> :
+          isAuthenticated && isTeacher ? <TeacherDashboard /> :
           isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         <Route path="/teacher-students" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherStudents /></Layout> :
+          isAuthenticated && isTeacher ? <TeacherStudents /> :
           isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         <Route path="/teacher-attendance" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherAttendance /></Layout> :
+          isAuthenticated && isTeacher ? <TeacherAttendance /> :
           isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         <Route path="/teacher-assessments" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherAssessments /></Layout> :
+          isAuthenticated && isTeacher ? <TeacherAssessments /> :
           isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         <Route path="/teacher-grades" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherGrades /></Layout> :
+          isAuthenticated && isTeacher ? <TeacherGrades /> :
           isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         <Route path="/teacher-profile" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherProfile /></Layout> :
+          isAuthenticated && isTeacher ? <TeacherProfile /> :
           isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         <Route path="/teacher-settings" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherSettings /></Layout> :
+          isAuthenticated && isTeacher ? <TeacherSettings /> :
           isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         <Route path="/teacher-report-cards" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherReportCards /></Layout> :
+          isAuthenticated && isTeacher ? <TeacherReportCards /> :
           isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         <Route path="/teacher-assignments" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherAssignments /></Layout> :
+          isAuthenticated && isTeacher ? <TeacherAssignments /> :
           isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         <Route path="/teacher-announcements" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherAnnouncements /></Layout> :
+          isAuthenticated && isTeacher ? <TeacherAnnouncements /> :
           isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
         } />
         <Route path="/teacher-payments" element={
-          isAuthenticated && isTeacher ? <Layout><TeacherPayments /></Layout> :
+          isAuthenticated && isTeacher ? <TeacherPayments /> :
           isAuthenticated && isAdmin ? <Navigate to="/dashboard" /> :
           isAuthenticated && isStudent ? <Navigate to="/student-dashboard" /> :
           <Navigate to="/teacher-login" />
