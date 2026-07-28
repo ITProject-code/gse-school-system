@@ -12,19 +12,12 @@ function Sidebar({ isOpen, toggleSidebar, closeSidebar }) {
     localStorage.removeItem("user");
     localStorage.removeItem("role");
     navigate("/login");
-    // ✅ FIX: Close sidebar on logout
     if (closeSidebar) closeSidebar();
   };
 
-  // ✅ FIX: Properly close sidebar when link is clicked
   const handleLinkClick = () => {
-    // ALWAYS close sidebar on mobile when a link is clicked
     if (window.innerWidth <= 768) {
-      if (closeSidebar) {
-        closeSidebar();
-      } else if (toggleSidebar) {
-        toggleSidebar();
-      }
+      if (closeSidebar) closeSidebar();
     }
   };
 
@@ -34,7 +27,6 @@ function Sidebar({ isOpen, toggleSidebar, closeSidebar }) {
 
   return (
     <>
-      {/* Overlay - closes sidebar when clicked */}
       {isOpen && (
         <div className="sidebar-overlay show" onClick={handleLinkClick}></div>
       )}

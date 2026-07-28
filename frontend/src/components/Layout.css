@@ -1,12 +1,11 @@
 /* ============================================================
-   LAYOUT STYLES - Hamburger Menu for All Pages
+   LAYOUT - SUPER SIMPLE VERSION
    ============================================================ */
 
 .layout-container {
     display: flex;
     min-height: 100vh;
     background: #081120;
-    position: relative;
     width: 100%;
 }
 
@@ -14,8 +13,8 @@
 .hamburger-btn {
     display: none;
     position: fixed;
-    top: 15px;
-    left: 15px;
+    top: 12px;
+    left: 12px;
     z-index: 1002;
     background: #0b132b;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -23,7 +22,7 @@
     padding: 10px 14px;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 20px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
@@ -31,16 +30,6 @@
 .hamburger-btn:hover {
     background: #1c2541;
     border-color: #f4a261;
-    transform: scale(1.05);
-}
-
-.hamburger-btn:active {
-    transform: scale(0.95);
-}
-
-.hamburger-btn:focus-visible {
-    outline: 2px solid #f4a261;
-    outline-offset: 2px;
 }
 
 /* ===== LAYOUT CONTENT ===== */
@@ -52,74 +41,33 @@
     margin: 0;
     width: 100%;
     overflow-x: hidden;
-    position: relative;
-    z-index: 1;
 }
 
-/* ✅ Content respects sidebar on desktop */
+/* ===== DESKTOP - Content respects sidebar width ===== */
 @media (min-width: 769px) {
     .layout-content {
-        margin-left: 0;
         width: calc(100% - 260px);
         max-width: calc(100% - 260px);
-        padding: 0;
+        margin-left: 0;
     }
 }
 
-@media (max-width: 992px) and (min-width: 769px) {
-    .layout-content {
-        width: calc(100% - 230px);
-        max-width: calc(100% - 230px);
-    }
-}
-
-/* ===== SIDEBAR OVERLAY ===== */
-.sidebar-overlay,
-.teacher-sidebar-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1000;
-    backdrop-filter: blur(2px);
-}
-
-.sidebar-overlay.show,
-.teacher-sidebar-overlay.show {
-    display: block;
-}
-
-/* ============================================================
-   RESPONSIVE - MOBILE
-   ============================================================ */
-
+/* ===== MOBILE - Full width with hamburger ===== */
 @media (max-width: 768px) {
     .hamburger-btn {
         display: flex;
         align-items: center;
         justify-content: center;
-        top: 12px;
-        left: 12px;
-        padding: 10px 14px;
-        font-size: 20px;
-        border-radius: 10px;
-        z-index: 1002;
     }
 
     .layout-content {
-        padding-top: 60px;
         width: 100% !important;
         max-width: 100% !important;
+        padding-top: 60px;
         margin-left: 0 !important;
-        min-height: 100vh;
-        padding-left: 0;
-        padding-right: 0;
     }
 
-    /* Sidebar - slides from left */
+    /* Sidebar slides from left on mobile */
     .sidebar,
     .teacher-sidebar {
         position: fixed !important;
@@ -138,18 +86,18 @@
         transform: translateX(0) !important;
     }
 
-    /* Overlay shows when sidebar is open */
+    /* Overlay */
     .sidebar-overlay.show,
     .teacher-sidebar-overlay.show {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 1000;
-        backdrop-filter: blur(2px);
+        display: block !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: rgba(0, 0, 0, 0.6) !important;
+        z-index: 1000 !important;
+        backdrop-filter: blur(2px) !important;
     }
 }
 
@@ -159,43 +107,14 @@
         left: 10px;
         padding: 8px 12px;
         font-size: 18px;
-        border-radius: 8px;
-        z-index: 1002;
     }
 
     .layout-content {
         padding-top: 55px;
-        padding-left: 0;
-        padding-right: 0;
     }
 
     .sidebar,
     .teacher-sidebar {
         width: 260px !important;
-        padding: 16px 12px !important;
     }
-}
-
-/* ===== SCROLLBAR FOR LAYOUT ===== */
-.layout-content::-webkit-scrollbar {
-    width: 6px;
-}
-
-.layout-content::-webkit-scrollbar-track {
-    background: #0b132b;
-}
-
-.layout-content::-webkit-scrollbar-thumb {
-    background: #f4a261;
-    border-radius: 10px;
-}
-
-.layout-content::-webkit-scrollbar-thumb:hover {
-    background: #e08f4d;
-}
-
-/* Firefox scrollbar */
-.layout-content {
-    scrollbar-width: thin;
-    scrollbar-color: #f4a261 #0b132b;
 }
