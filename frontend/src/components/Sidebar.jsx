@@ -1,23 +1,46 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { FaTimes } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import { FaTimes, FaBars } from "react-icons/fa";
 import "./Sidebar.css";
 
-function Sidebar({ isOpen, toggleSidebar, closeSidebar }) {
+function Sidebar() {
   const navigate = useNavigate();
   const location = useLocation();
   const user = JSON.parse(localStorage.getItem("user") || "{}");
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Close sidebar on route change (mobile)
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setIsOpen(false);
+    }
+  }, [location.pathname]);
+
+  // Close sidebar when window resizes to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const toggleSidebar = () => setIsOpen(!isOpen);
+  const closeSidebar = () => setIsOpen(false);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     localStorage.removeItem("role");
     navigate("/login");
-    if (closeSidebar) closeSidebar();
+    closeSidebar();
   };
 
   const handleLinkClick = () => {
     if (window.innerWidth <= 768) {
-      if (closeSidebar) closeSidebar();
+      closeSidebar();
     }
   };
 
@@ -27,8 +50,14 @@ function Sidebar({ isOpen, toggleSidebar, closeSidebar }) {
 
   return (
     <>
+      {/* Hamburger Button - Mobile Only */}
+      <button className="sidebar-hamburger-btn" onClick={toggleSidebar} aria-label="Toggle Sidebar">
+        <FaBars />
+      </button>
+
+      {/* Overlay - closes sidebar when clicked */}
       {isOpen && (
-        <div className="sidebar-overlay show" onClick={handleLinkClick}></div>
+        <div className="sidebar-overlay show" onClick={closeSidebar}></div>
       )}
       
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
@@ -37,7 +66,7 @@ function Sidebar({ isOpen, toggleSidebar, closeSidebar }) {
             <h2>🏫 GSEMS</h2>
             <p>German School ERP</p>
           </div>
-          <button className="sidebar-close-btn" onClick={handleLinkClick}>
+          <button className="sidebar-close-btn" onClick={closeSidebar} aria-label="Close Sidebar">
             <FaTimes />
           </button>
         </div>
